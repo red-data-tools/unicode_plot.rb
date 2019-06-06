@@ -8,6 +8,10 @@ UnicodePlot provides the feature to make charts with Unicode characters.
 $ gem install unicode_plot
 ```
 
+## Acknowledgement
+
+This library is strongly inspired by [UnicodePlot.jl](https://github.com/Evizero/UnicodePlots.jl).
+
 ## License
 
 MIT License
