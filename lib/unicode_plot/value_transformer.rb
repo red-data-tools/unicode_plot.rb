@@ -1,7 +1,12 @@
 module UnicodePlot
   module ValueTransformer
     PREDEFINED_TRANSFORM_FUNCTIONS = {
-      log10: Math.method(:log10)
+      log: Math.method(:log),
+      ln: Math.method(:log),
+      log10: Math.method(:log10),
+      lg: Math.method(:log10),
+      log2: Math.method(:log2),
+      lb: Math.method(:log2),
     }.freeze
 
     def transform_values(func, values)
