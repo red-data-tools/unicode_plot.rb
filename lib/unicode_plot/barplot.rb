@@ -1,5 +1,7 @@
 module UnicodePlot
   class Barplot < Plot
+    include ValueTransformer
+
     MIN_WIDTH = 10
     DEFAULT_WIDTH = 40
     DEFAULT_COLOR = :green
@@ -11,7 +13,7 @@ module UnicodePlot
       end
       @bars = bars
       @symbol = symbol
-      @max_freq, i = find_max(bars) # TODO: transform
+      @max_freq, i = find_max(transform_values(transform, bars))
       @max_len = bars[i].to_s.length
       @width = [width, max_len + 7, MIN_WIDTH].max
       @color = color
@@ -36,7 +38,7 @@ module UnicodePlot
       check_row_index(row_index)
       bar = @bars[row_index]
       max_bar_width = [width - 2 - max_len, 1].max
-      val = bar # TODO: transform
+      val = transform_values(@transform, bar)
       bar_len = max_freq > 0 ?
         ([val, 0.0].max.fdiv(max_freq) * max_bar_width).round :
         0
@@ -74,7 +76,7 @@ module UnicodePlot
                               symbol: Barplot::DEFAULT_SYMBOL,
                               border: :barplot,
                               xscale: nil,
-                              xlabel: "",
+                              xlabel: nil,
                               data: nil,
                               **kw)
     case args.length
@@ -89,8 +91,9 @@ module UnicodePlot
       raise ArgumentError, "invalid arguments"
     end
 
+    xlabel ||= ValueTransformer.transform_name(xscale)
     plot = Barplot.new(heights, width, color, symbol, xscale,
-                       border: border,
+                       border: border, xlabel: xlabel,
                        **kw)
     keys.each_with_index do |key, i|
       plot.annotate_row!(:l, i, key)
