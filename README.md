@@ -24,7 +24,7 @@ puts
 
 You can get the results below by running the above script:
 
-![](img/lineplot.png)
+<img src="img/lineplot.png" width="50%" />
 
 ## Supported charts
 
