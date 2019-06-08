@@ -67,7 +67,7 @@ class LineplotTest < Test::Unit::TestCase
         @y.map {|y| y * 1e-3 - 15 }
       )
       _, output = with_term { plot.render($stdout) }
-      assert_equal(fixture_path("lineplot/scale1.txt"),
+      assert_equal(fixture_path("lineplot/scale1.txt").read,
                    output)
 
       plot = UnicodePlot.lineplot(
@@ -75,19 +75,19 @@ class LineplotTest < Test::Unit::TestCase
         @y.map {|y| y * 1e+3 - 15 }
       )
       _, output = with_term { plot.render($stdout) }
-      assert_equal(fixture_path("lineplot/scale2.txt"),
+      assert_equal(fixture_path("lineplot/scale2.txt").read,
                    output)
 
       tx = [-1.0, 2, 3, 700000]
       ty = [1.0, 2, 9, 4000000]
       plot = UnicodePlot.lineplot(tx, ty)
       _, output = with_term { plot.render($stdout) }
-      assert_equal(fixture_path("lineplot/scale3.txt"),
+      assert_equal(fixture_path("lineplot/scale3.txt").read,
                    output)
 
       plot = UnicodePlot.lineplot(tx, ty, width: 5, height: 5)
       _, output = with_term { plot.render($stdout) }
-      assert_equal(fixture_path("lineplot/scale3_small.txt"),
+      assert_equal(fixture_path("lineplot/scale3_small.txt").read,
                    output)
     end
 

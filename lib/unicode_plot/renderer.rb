@@ -152,7 +152,7 @@ module UnicodePlot
           botleft_len  = botleft_str.length
           botmid_len   = botmid_str.length
           botright_len = botright_str.length
-          print_styled(out, @border_padding, @botleft_str, color: botleft_col)
+          print_styled(out, @border_padding, botleft_str, color: botleft_col)
           cnt = (@border_length / 2.0 - botmid_len / 2.0 - botleft_len).round
           pad = cnt > 0 ? " " * cnt : ""
           print_styled(out, pad, botmid_str, color: botmid_col)

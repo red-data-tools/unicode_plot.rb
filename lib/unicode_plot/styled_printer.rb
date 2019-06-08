@@ -44,6 +44,19 @@ module UnicodePlot
       nothing:   "",
     }.freeze
 
+    COLOR_ENCODE = {
+      normal:  0b000,
+      blue:    0b001,
+      red:     0b010,
+      magenta: 0b011,
+      green:   0b100,
+      cyan:    0b101,
+      yellow:  0b110,
+      white:   0b111
+    }.freeze
+
+    COLOR_DECODE = COLOR_ENCODE.map {|k, v| [v, k] }.to_h.freeze
+
     def print_styled(out, *args, bold: false, color: :normal)
       return out.print(*args) unless color?(out)
 
@@ -64,6 +77,11 @@ module UnicodePlot
         sio.close
         out.print(sio.string)
       end
+    end
+
+    def print_color(out, color, *args)
+      color = COLOR_DECODE[color]
+      print_styled(out, *args, color: color)
     end
 
     def color?(out)

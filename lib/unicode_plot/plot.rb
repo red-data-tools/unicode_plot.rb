@@ -26,6 +26,7 @@ module UnicodePlot
       @decorations = {}
       @colors_deco = {}
       @show_labels = labels
+      @auto_color = 0
     end
 
     attr_reader :title,
@@ -61,7 +62,34 @@ module UnicodePlot
       @show_labels
     end
 
-    def annotate_row!(loc, row_index, value, color = :normal)
+    def annotate!(loc, value, color: :normal)
+      case loc
+      when :l
+        (0 ... n_rows).each do |row|
+          if @labels_left.fetch(row, "") == ""
+            @labels_left[row] = value
+            @colors_left[row] = color
+            break
+          end
+        end
+      when :r
+        (0 ... n_rows).each do |row|
+          if @labels_right.fetch(row, "") == ""
+            @labels_right[row] = value
+            @colors_right[row] = color
+            break
+          end
+        end
+      when :t, :b, :tl, :tr, :bl, :br
+        @decorations[loc] = value
+        @colors_deco[loc] = color
+      else
+        raise ArgumentError,
+          "unknown location to annotate (#{loc.inspect} for :t, :b, :l, :r, :tl, :tr, :bl, or :br)"
+      end
+    end
+
+    def annotate_row!(loc, row_index, value, color: :normal)
       case loc
       when :l
         @labels_left[row_index] = value
@@ -76,6 +104,21 @@ module UnicodePlot
 
     def render(out)
       Renderer.render(out, self)
+    end
+
+    COLOR_CYCLE = [
+      :green,
+      :blue,
+      :red,
+      :magenta,
+      :yellow,
+      :cyan
+    ].freeze
+
+    def next_color
+      COLOR_CYCLE[@auto_color]
+    ensure
+      @auto_color = (@auto_color + 1) % COLOR_CYCLE.length
     end
 
     def to_s
