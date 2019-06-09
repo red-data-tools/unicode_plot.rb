@@ -4,6 +4,8 @@ module UnicodePlot
 
     def self.create(canvas_type, width, height, **kw)
       case canvas_type
+      when :ascii
+        AsciiCanvas.new(width, height, **kw)
       when :braille
         BrailleCanvas.new(width, height, **kw)
       else
