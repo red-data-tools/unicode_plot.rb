@@ -83,27 +83,11 @@ module UnicodePlot
     end
 
     def points!(x, y, color)
-      if x.length != y.length
-        raise ArgumentError, "x and y must be the same length"
-      end
-      unless x.length > 0
-        raise ArgumentError, "x and y must not be empty"
-      end
-      (0 ... x.length).each do |i|
-        @canvas.point!(x[i], y[i], color)
-      end
+      @canvas.points!(x, y, color)
     end
 
     def lines!(x, y, color)
-      if x.length != y.length
-        raise ArgumentError, "x and y must be the same length"
-      end
-      unless x.length > 0
-        raise ArgumentError, "x and y must not be empty"
-      end
-      (0 ... (x.length - 1)).each do |i|
-        @canvas.line!(x[i], y[i], x[i+1], y[i+1], color)
-      end
+      @canvas.lines!(x, y, color)
     end
 
     def print_row(out, row_index)

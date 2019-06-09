@@ -2,9 +2,9 @@ require 'stringio'
 
 module Helper
   module WithTerm
-    def with_term
+    def with_term(tty=true)
       sio = StringIO.new
-      def sio.tty?; true; end
+      def sio.tty?; true; end if tty
 
       orig_stdout, $stdout = $stdout, sio
       orig_env = ENV.to_h.dup
