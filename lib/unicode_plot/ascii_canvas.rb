@@ -79,11 +79,24 @@ module UnicodePlot
       0b110_011_110 => '}',
     }.freeze
 
-    ASCII_DECODE = { 0 => ' ' }
+    ascii_lookup_key_order = [
+      0x0002, 0x00d2, 0x0113, 0x00a0, 0x0088,
+      0x002a, 0x0100, 0x0197, 0x0012, 0x0193,
+      0x0092, 0x0082, 0x008a, 0x0054, 0x0004,
+      0x01d2, 0x01ff, 0x0124, 0x00a8, 0x0056,
+      0x0001, 0x01c7, 0x0052, 0x0080, 0x0009,
+      0x00cb, 0x0007, 0x003c, 0x0111, 0x0140,
+      0x0024, 0x0127, 0x0192, 0x0010, 0x019e,
+      0x01a6, 0x01d7, 0x0155, 0x00a2, 0x00ba,
+      0x0112, 0x0049, 0x00f3, 0x0152, 0x0038,
+      0x016a
+    ]
+
+    ASCII_DECODE = [' ']
 
     1.upto(0b111_111_111) do |i|
-      _, min_char = ASCII_LOOKUP.min_by {|k, v| (i ^ k).digits(2).sum }
-      ASCII_DECODE[i] = min_char
+      min_key = ascii_lookup_key_order.min_by {|k| (i ^ k).digits(2).sum }
+      ASCII_DECODE[i] = ASCII_LOOKUP[min_key]
     end
 
     ASCII_DECODE.freeze
@@ -111,7 +124,7 @@ module UnicodePlot
       tx = pixel_x.fdiv(pixel_width) * width
       char_x = tx.floor + 1
       char_x_off = pixel_x % PIXEL_PER_CHAR + 1
-      char_x +=1 if char_x < tx.round + 1 && char_x_off == 1
+      char_x += 1 if char_x < tx.round + 1 && char_x_off == 1
 
       char_y = (pixel_y.fdiv(pixel_height) * height).floor + 1
       char_y_off = pixel_y % PIXEL_PER_CHAR + 1

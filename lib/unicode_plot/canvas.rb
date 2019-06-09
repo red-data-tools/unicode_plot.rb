@@ -1,6 +1,6 @@
 module UnicodePlot
   class Canvas
-    include StyledPrinter
+    include BorderPrinter
 
     def self.create(canvas_type, width, height, **kw)
       case canvas_type
@@ -45,6 +45,28 @@ module UnicodePlot
     attr_reader :x_pixel_per_char
     attr_reader :y_pixel_per_char
 
+    def show(out)
+      b = BorderMaps::BORDER_SOLID
+      border_length = width
+
+      print_border_top(out, "", border_length, :solid, color: :light_black)
+      out.puts
+      (0 ... height).each do |row_index|
+        print_styled(out, b[:l], color: :light_black)
+        print_row(out, row_index)
+        print_styled(out, b[:r], color: :light_black)
+        out.puts
+      end
+      print_border_bottom(out, "", border_length, :solid, color: :light_black)
+    end
+
+    def print(out)
+      (0 ... height).each do |row_index|
+        print_row(out, row_index)
+        out.puts if row_index < height - 1
+      end
+    end
+
     def char_at(x, y)
       @grid[index_at(x, y)]
     end
@@ -71,6 +93,18 @@ module UnicodePlot
       pixel_y = pixel_height - plot_offset_y.fdiv(plot_height) * pixel_height
 
       pixel!(pixel_x.floor, pixel_y.floor, color)
+    end
+
+    def points!(x, y, color = :normal)
+      if x.length != y.length
+        raise ArgumentError, "x and y must be the same length"
+      end
+      unless x.length > 0
+        raise ArgumentError, "x and y must not be empty"
+      end
+      (0 ... x.length).each do |i|
+        point!(x[i], y[i], color)
+      end
     end
 
     # digital differential analyzer algorithm
@@ -109,6 +143,18 @@ module UnicodePlot
         pixel!(cur_x.floor, cur_y.floor, color)
       end
       color
+    end
+
+    def lines!(x, y, color = :normal)
+      if x.length != y.length
+        raise ArgumentError, "x and y must be the same length"
+      end
+      unless x.length > 0
+        raise ArgumentError, "x and y must not be empty"
+      end
+      (0 ... (x.length - 1)).each do |i|
+        line!(x[i], y[i], x[i+1], y[i+1], color)
+      end
     end
   end
 end

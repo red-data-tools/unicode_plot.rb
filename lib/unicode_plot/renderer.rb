@@ -28,8 +28,24 @@ module UnicodePlot
     barplot: BorderMaps::BORDER_BARPLOT,
   }.freeze
 
-  class Renderer
+  module BorderPrinter
     include StyledPrinter
+
+    def print_border_top(out, padding, length, border=:solid, color: :light_black)
+      return if border == :none
+      b = BORDER_MAP[border]
+      print_styled(out, padding, b[:tl], b[:t] * length, b[:tr], color: color)
+    end
+
+    def print_border_bottom(out, padding, length, border=:solid, color: :light_black)
+      return if border == :none
+      b = BORDER_MAP[border]
+      print_styled(out, padding, b[:bl], b[:b] * length, b[:br], color: color)
+    end
+  end
+
+  class Renderer
+    include BorderPrinter
 
     def self.render(out, plot)
       new(plot).render(out)
@@ -81,7 +97,7 @@ module UnicodePlot
         end
       end
 
-      print_border_top(@border_padding, @border_length, plot.border)
+      print_border_top(out, @border_padding, @border_length, plot.border)
       print(" " * @max_len_r, @plot_padding, "\n")
     end
 
@@ -137,7 +153,7 @@ module UnicodePlot
 
     def render_bottom
       # draw bottom border and bottom labels
-      print_border_bottom(@border_padding, @border_length, plot.border)
+      print_border_bottom(out, @border_padding, @border_length, plot.border)
       print(" " * @max_len_r, @plot_padding)
       if plot.show_labels?
         botleft_str  = plot.decorations.fetch(:bl, "")
@@ -201,18 +217,6 @@ module UnicodePlot
       offset = [offset, 0].max
       tpad = " " * offset
       print_styled(out, padding, tpad, title, color: color)
-    end
-
-    def print_border_top(padding, length, border=:solid, color: :light_black)
-      return if border == :none
-      b = BORDER_MAP[border]
-      print_styled(out, padding, b[:tl], b[:t] * length, b[:tr], color: color)
-    end
-
-    def print_border_bottom(padding, length, border=:solid, color: :light_black)
-      return if border == :none
-      b = BORDER_MAP[border]
-      print_styled(out, padding, b[:bl], b[:b] * length, b[:br], color: color)
     end
 
     def print(*args)
