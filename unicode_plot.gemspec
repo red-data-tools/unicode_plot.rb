@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = %q{Plot your data by Unicode characters}
   spec.description = %q{Plot your data by Unicode characters}
-  spec.homepage = "https://github.com/mrkn/unicode_plot.rb"
+  spec.homepage = "https://github.com/red-data-tools/unicode_plot.rb"
   spec.license = "MIT"
 
   spec.files = ["README.md", "Rakefile", "Gemfile", "#{spec.name}.gemspec"]
