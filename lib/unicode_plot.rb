@@ -12,4 +12,5 @@ require 'unicode_plot/braille_canvas'
 require 'unicode_plot/plot'
 
 require 'unicode_plot/barplot'
+require 'unicode_plot/boxplot'
 require 'unicode_plot/lineplot'
