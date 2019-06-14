@@ -1,6 +1,7 @@
 # master
 
 - Add histogram support
+- Add barplot! method
 
 # 0.0.2
 
