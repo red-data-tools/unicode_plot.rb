@@ -29,6 +29,7 @@ You can get the results below by running the above script:
 ## Supported charts
 
 - barplot
+- boxplot
 - lineplot
 
 ## Acknowledgement
