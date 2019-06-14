@@ -11,6 +11,17 @@ module UnicodePlot
       r:  "│"
     }.freeze
 
+    BORDER_CORNERS = {
+      tl: "┌",
+      tr: "┐",
+      bl: "└",
+      br: "┘",
+      t:  " ",
+      l:  " ",
+      b:  " ",
+      r:  " ",
+    }.freeze
+
     BORDER_BARPLOT = {
       tl: "┌",
       tr: "┐",
@@ -25,6 +36,7 @@ module UnicodePlot
 
   BORDER_MAP = {
     solid:   BorderMaps::BORDER_SOLID,
+    corners: BorderMaps::BORDER_CORNERS,
     barplot: BorderMaps::BORDER_BARPLOT,
   }.freeze
 

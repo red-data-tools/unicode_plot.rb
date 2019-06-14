@@ -19,8 +19,8 @@ module UnicodePlot
       end
       width = [width, MIN_WIDTH].max
       height = [height, MIN_HEIGHT].max
-      min_x, max_x = extend_limits(x, xlim)
-      min_y, max_y = extend_limits(y, ylim)
+      min_x, max_x = Utils.extend_limits(x, xlim)
+      min_y, max_y = Utils.extend_limits(y, ylim)
       origin_x = min_x
       origin_y = min_y
       plot_width = max_x - origin_x
@@ -32,10 +32,10 @@ module UnicodePlot
                               plot_height: plot_height)
       super(**kw)
 
-      min_x_str = (roundable?(min_x) ? min_x.round : min_x).to_s
-      max_x_str = (roundable?(max_x) ? max_x.round : max_x).to_s
-      min_y_str = (roundable?(min_y) ? min_y.round : min_y).to_s
-      max_y_str = (roundable?(max_y) ? max_y.round : max_y).to_s
+      min_x_str = (Utils.roundable?(min_x) ? min_x.round : min_x).to_s
+      max_x_str = (Utils.roundable?(max_x) ? max_x.round : max_x).to_s
+      min_y_str = (Utils.roundable?(min_y) ? min_y.round : min_y).to_s
+      max_y_str = (Utils.roundable?(max_y) ? max_y.round : max_y).to_s
 
       annotate_row!(:l, 0, max_y_str, color: :light_black)
       annotate_row!(:l, height-1, min_y_str, color: :light_black)
@@ -92,62 +92,6 @@ module UnicodePlot
 
     def print_row(out, row_index)
       @canvas.print_row(out, row_index)
-    end
-
-    def extend_limits(values, limits)
-      mi, ma = limits.minmax.map(&:to_f)
-      if mi == 0 && ma == 0
-        mi, ma = values.minmax.map(&:to_f)
-      end
-      diff = ma - mi
-      if diff == 0
-        ma = mi + 1
-        mi = mi - 1
-      end
-      if limits == [0, 0]
-        plotting_range_narrow(mi, ma)
-      else
-        [mi, ma]
-      end
-    end
-
-    def plotting_range_narrow(xmin, xmax)
-      diff = xmax - xmin
-      xmax = round_up_subtick(xmax, diff)
-      xmin = round_down_subtick(xmin, diff)
-      [xmin.to_f, xmax.to_f]
-    end
-
-    def round_up_subtick(x, m)
-      if x == 0
-        0.0
-      elsif x > 0
-        x.ceil(ceil_neg_log10(m) + 1)
-      else
-        -(-x).floor(ceil_neg_log10(m) + 1)
-      end
-    end
-
-    def round_down_subtick(x, m)
-      if x == 0
-        0.0
-      elsif x > 0
-        x.floor(ceil_neg_log10(m) + 1)
-      else
-        -(-x).ceil(ceil_neg_log10(m) + 1)
-      end
-    end
-
-    def ceil_neg_log10(x)
-      if roundable?(-Math.log10(x))
-        (-Math.log10(x)).ceil
-      else
-        (-Math.log10(x)).floor
-      end
-    end
-
-    def roundable?(x)
-      x.to_i == x
     end
   end
 
