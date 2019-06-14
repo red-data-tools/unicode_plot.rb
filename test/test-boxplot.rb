@@ -53,5 +53,31 @@ class BoxplotTest < Test::Unit::TestCase
       assert_equal(fixture_path("boxplot/scale#{i}.txt").read,
                    output)
     end
+
+    test("multi-series") do
+      plot = UnicodePlot.boxplot(["one", "two"],
+                                 [
+                                   [1, 2, 3, 4, 5],
+                                   [2, 3, 4, 5, 6, 7, 8, 9]
+                                 ],
+                                 title: "Multi-series",
+                                 xlabel: "foo",
+                                 color: :yellow)
+      _, output = with_term { plot.render($stdout) }
+      assert_equal(fixture_path("boxplot/multi1.txt").read,
+                   output)
+
+      assert_same(plot,
+                  UnicodePlot.boxplot!(plot, "one more", [-1, 2, 3, 4, 11]))
+      _, output = with_term { plot.render($stdout) }
+      assert_equal(fixture_path("boxplot/multi2.txt").read,
+                   output)
+
+      assert_same(plot,
+                  UnicodePlot.boxplot!(plot, [4, 2, 2.5, 4, 14], name: "last one"))
+      _, output = with_term { plot.render($stdout) }
+      assert_equal(fixture_path("boxplot/multi3.txt").read,
+                   output)
+    end
   end
 end

@@ -20,12 +20,25 @@ module UnicodePlot
       super(**kw)
     end
 
+    attr_reader :min_x, :max_x
+
+    def n_data
+      @data.length
+    end
+
     def n_rows
       3 * @data.length
     end
 
     def n_columns
       @width
+    end
+
+    def add_series!(data)
+      mi, ma = data.minmax
+      @data << data.percentile([0, 25, 50, 75, 100])
+      @min_x = [mi, @min_x].min
+      @max_x = [ma, @max_x].max
     end
 
     def print_row(out, row_index)
@@ -72,7 +85,8 @@ module UnicodePlot
 
     private def transform(values)
       values.map do |val|
-        ((val - @min_x).fdiv(@max_x - @min_x) * @width).round.clamp(1, @width).to_i
+        val = (val - @min_x).fdiv(@max_x - @min_x) * @width
+        val.round(half: :even).clamp(1, @width).to_i
       end
     end
 
@@ -127,8 +141,11 @@ module UnicodePlot
 
     plot = Boxplot.new(data[0], width, color, min_x, max_x,
                        border: border, **kw)
+    (1 ... data.length).each do |i|
+      plot.add_series!(data[i])
+    end
 
-    mean_x = (min_x + max_x) / 2
+    mean_x = (min_x + max_x) / 2.0
     min_x_str  = (Utils.roundable?(min_x) ? min_x.round : min_x).to_s
     mean_x_str = (Utils.roundable?(mean_x) ? mean_x.round : mean_x).to_s
     max_x_str  = (Utils.roundable?(max_x) ? max_x.round : max_x).to_s
@@ -139,6 +156,39 @@ module UnicodePlot
     text.each_with_index do |name, i|
       plot.annotate_row!(:l, i*3+1, name) if name.length > 0
     end
+
+    plot
+  end
+
+  module_function def boxplot!(plot, *args, **kw)
+    case args.length
+    when 1
+      data = args[0]
+      name = kw[:name] || ""
+    when 2
+      name = args[0]
+      data = args[1]
+    else
+      raise ArgumentError, "worng number of arguments"
+    end
+
+    if data.empty?
+      raise ArgumentError, "Can't append empty array to boxplot"
+    end
+
+    plot.add_series!(data)
+
+    plot.annotate_row!(:l, (plot.n_data - 1)*3+1, name) if name && name != ""
+
+    min_x = plot.min_x
+    max_x = plot.max_x
+    mean_x = (min_x + max_x) / 2.0
+    min_x_str  = (Utils.roundable?(min_x) ? min_x.round : min_x).to_s
+    mean_x_str = (Utils.roundable?(mean_x) ? mean_x.round : mean_x).to_s
+    max_x_str  = (Utils.roundable?(max_x) ? max_x.round : max_x).to_s
+    plot.annotate!(:bl, min_x_str, color: :light_black)
+    plot.annotate!(:b,  mean_x_str, color: :light_black)
+    plot.annotate!(:br, max_x_str, color: :light_black)
 
     plot
   end
