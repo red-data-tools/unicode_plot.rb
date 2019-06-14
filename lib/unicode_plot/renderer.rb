@@ -124,8 +124,8 @@ module UnicodePlot
       left_col  = plot.colors_left.fetch(row, :light_black)
       right_str = plot.labels_right.fetch(row, "")
       right_col = plot.colors_right.fetch(row, :light_black)
-      left_len  = left_str.length
-      right_len = right_str.length
+      left_len  = nocolor_string(left_str).length
+      right_len = nocolor_string(right_str).length
 
       unless color?(out)
         left_str  = nocolor_string(left_str)
@@ -201,10 +201,10 @@ module UnicodePlot
 
       # get length of largest strings to the left and right
       @max_len_l = plot.show_labels? && !plot.labels_left.empty? ?
-        plot.labels_left.each_value.map {|l| l.to_s.length }.max :
+        plot.labels_left.each_value.map {|l| nocolor_string(l).length }.max :
         0
       @max_len_r = plot.show_labels? && !plot.labels_right.empty? ?
-        plot.labels_right.each_value.map {|l| l.to_s.length }.max :
+        plot.labels_right.each_value.map {|l| nocolor_string(l).length }.max :
         0
       if plot.show_labels? && plot.ylabel_given?
         @max_len_l += plot.ylabel_length + 1

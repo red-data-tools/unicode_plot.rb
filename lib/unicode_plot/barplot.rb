@@ -34,13 +34,19 @@ module UnicodePlot
       @width
     end
 
+    def add_row!(bars)
+      @bars.concat(bars)
+      @max_freq, i = find_max(transform_values(@transform, bars))
+      @max_len = @bars[i].to_s.length
+    end
+
     def print_row(out, row_index)
       check_row_index(row_index)
       bar = @bars[row_index]
       max_bar_width = [width - 2 - max_len, 1].max
       val = transform_values(@transform, bar)
       bar_len = max_freq > 0 ?
-        ([val, 0.0].max.fdiv(max_freq) * max_bar_width).round :
+        ([val, 0].max.fdiv(max_freq) * max_bar_width).round :
         0
       bar_str = max_freq > 0 ? @symbol * bar_len : ""
       bar_lbl = bar.to_s
@@ -81,7 +87,7 @@ module UnicodePlot
                               **kw)
     case args.length
     when 0
-      data = Hash(args[0] || data)
+      data = Hash(data)
       keys = data.keys.map(&:to_s)
       heights = data.values
     when 2
@@ -99,6 +105,36 @@ module UnicodePlot
       plot.annotate_row!(:l, i, key)
     end
 
+    plot
+  end
+
+  module_function def barplot!(plot,
+                               *args,
+                               data: nil,
+                               **kw)
+    case args.length
+    when 0
+      data = Hash(data)
+      keys = data.keys.map(&:to_s)
+      heights = data.values
+    when 2
+      keys = Array(args[0])
+      heights = Array(args[1])
+    else
+      raise ArgumentError, "invalid arguments"
+    end
+
+    unless keys.length == heights.length
+      raise ArgumentError, "The given vectors must be of the same length"
+    end
+    if keys.empty?
+      raise ArgumentError, "Can't append empty array to barplot"
+    end
+    cur_idx = plot.n_rows
+    plot.add_row!(heights)
+    keys.each_with_index do |key, i|
+      plot.annotate_row!(:l, cur_idx + i, key)
+    end
     plot
   end
 end

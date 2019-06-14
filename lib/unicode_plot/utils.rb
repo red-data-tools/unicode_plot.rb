@@ -26,6 +26,16 @@ module UnicodePlot
       [xmin.to_f, xmax.to_f]
     end
 
+    def float_round_log10(x, m)
+      if x == 0
+        0.0
+      elsif x > 0
+        x.round(ceil_neg_log10(m) + 1).to_f
+      else
+        -(-x).round(ceil_neg_log10(m) + 1).to_f
+      end
+    end
+
     def round_up_subtick(x, m)
       if x == 0
         0.0
