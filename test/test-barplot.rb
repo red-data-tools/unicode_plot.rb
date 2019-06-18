@@ -3,6 +3,15 @@ class BarplotTest < Test::Unit::TestCase
   include Helper::WithTerm
 
   sub_test_case("UnicodePlot.barplot") do
+    test("errors") do
+      assert_raise(ArgumentError) do
+        UnicodePlot.barplot([:a], [-1, 2])
+      end
+      assert_raise(ArgumentError) do
+        UnicodePlot.barplot([:a, :b], [-1, 2])
+      end
+    end
+
     test("colored") do
       data = { bar: 23, foo: 37 }
       plot = UnicodePlot.barplot(data: data)
@@ -67,6 +76,20 @@ class BarplotTest < Test::Unit::TestCase
       plot = UnicodePlot.barplot(2..6, 11..15)
       _, output = with_term { plot.render($stdout) }
       assert_equal(fixture_path("barplot/ranges.txt").read,
+                   output)
+    end
+
+    test("all zeros") do
+      plot = UnicodePlot.barplot([5, 4, 3, 2, 1], [0, 0, 0, 0, 0])
+      _, output = with_term { plot.render($stdout) }
+      assert_equal(fixture_path("barplot/edgecase_zeros.txt").read,
+                   output)
+    end
+
+    test("one large") do
+      plot = UnicodePlot.barplot([:a, :b, :c, :d], [1, 1, 1, 1000000])
+      _, output = with_term { plot.render($stdout) }
+      assert_equal(fixture_path("barplot/edgecase_onelarge.txt").read,
                    output)
     end
   end
