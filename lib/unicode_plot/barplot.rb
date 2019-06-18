@@ -97,6 +97,13 @@ module UnicodePlot
       raise ArgumentError, "invalid arguments"
     end
 
+    unless keys.length == heights.length
+      raise ArgumentError, "The given vectors must be of the same length"
+    end
+    unless heights.min >= 0
+      raise ArgumentError, "All values have to be positive. Negative bars are not supported."
+    end
+
     xlabel ||= ValueTransformer.transform_name(xscale)
     plot = Barplot.new(heights, width, color, symbol, xscale,
                        border: border, xlabel: xlabel,
@@ -130,6 +137,7 @@ module UnicodePlot
     if keys.empty?
       raise ArgumentError, "Can't append empty array to barplot"
     end
+
     cur_idx = plot.n_rows
     plot.add_row!(heights)
     keys.each_with_index do |key, i|
