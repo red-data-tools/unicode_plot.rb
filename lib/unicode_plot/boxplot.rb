@@ -19,7 +19,8 @@ module UnicodePlot
       super(**kw)
     end
 
-    attr_reader :min_x, :max_x
+    attr_reader :min_x
+    attr_reader :max_x
 
     def n_data
       @data.length

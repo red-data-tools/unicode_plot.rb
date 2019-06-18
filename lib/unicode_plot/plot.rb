@@ -30,18 +30,18 @@ module UnicodePlot
       @auto_color = 0
     end
 
-    attr_reader :title,
-                :xlabel,
-                :ylabel,
-                :border,
-                :margin,
-                :padding,
-                :labels_left,
-                :colors_left,
-                :labels_right,
-                :colors_right,
-                :decorations,
-                :colors_deco
+    attr_reader :title
+    attr_reader :xlabel
+    attr_reader :ylabel
+    attr_reader :border
+    attr_reader :margin
+    attr_reader :padding
+    attr_reader :labels_left
+    attr_reader :colors_left
+    attr_reader :labels_right
+    attr_reader :colors_right
+    attr_reader :decorations
+    attr_reader :colors_deco
 
     def title_given?
       title && title != ""
