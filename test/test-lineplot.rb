@@ -125,6 +125,73 @@ class LineplotTest < Test::Unit::TestCase
                    output)
     end
 
+    test("limits") do
+      plot = UnicodePlot.lineplot(@x, @y, xlim: [-1.5, 3.5], ylim: [-5.5, 2.5])
+      _, output = with_term { plot.render($stdout) }
+      assert_equal(fixture_path("lineplot/limits.txt").read,
+                   output)
+    end
+
+    test("nogrid") do
+      plot = UnicodePlot.lineplot(@x, @y, grid: false)
+      _, output = with_term { plot.render($stdout) }
+      assert_equal(fixture_path("lineplot/nogrid.txt").read,
+                   output)
+    end
+
+    test("color: :blue") do
+      plot = UnicodePlot.lineplot(@x, @y, color: :blue, name: "points1")
+      _, output = with_term { plot.render($stdout) }
+      assert_equal(fixture_path("lineplot/blue.txt").read,
+                   output)
+    end
+
+    test("parameters") do
+      plot = UnicodePlot.lineplot(@x, @y,
+                                  name: "points1",
+                                  title: "Scatter",
+                                  xlabel: "x",
+                                  ylabel: "y")
+      _, output = with_term { plot.render($stdout) }
+      assert_equal(fixture_path("lineplot/parameters1.txt").read,
+                   output)
+
+      assert_same(plot,
+                  UnicodePlot.lineplot!(plot,
+                                        [0.5, 1, 1.5],
+                                        name: "points2"))
+      _, output = with_term { plot.render($stdout) }
+      assert_equal(fixture_path("lineplot/parameters2.txt").read,
+                   output)
+
+      assert_same(plot,
+                  UnicodePlot.lineplot!(plot,
+                                        [-0.5, 0.5, 1.5],
+                                        [0.5, 1, 1.5],
+                                        name: "points3"))
+      _, output = with_term { plot.render($stdout) }
+      assert_equal(fixture_path("lineplot/parameters3.txt").read,
+                   output)
+      output = StringIO.open do |sio|
+        plot.render(sio)
+        sio.close
+        sio.string
+      end
+      assert_equal(fixture_path("lineplot/nocolor.txt").read,
+                   output)
+    end
+
+    test("canvas size") do
+      plot = UnicodePlot.lineplot(@x, @y,
+                                  title: "Scatter",
+                                  canvas: :dot,
+                                  width: 10,
+                                  height: 5)
+      _, output = with_term { plot.render($stdout) }
+      assert_equal(fixture_path("lineplot/canvassize.txt").read,
+                   output)
+    end
+
     # TODO: functions
 
     # TODO: stairs
