@@ -2,6 +2,7 @@ module UnicodePlot
   class Plot
     include StyledPrinter
 
+    DEFAULT_WIDTH = 40
     DEFAULT_BORDER = :solid
     DEFAULT_MARGIN = 3
     DEFAULT_PADDING = 1

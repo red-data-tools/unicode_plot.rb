@@ -4,7 +4,6 @@ module UnicodePlot
   class Boxplot < Plot
     MIN_WIDTH = 10
     DEFAULT_COLOR = :green
-    DEFAULT_WIDTH = 40
 
     def initialize(data, width, color, min_x, max_x, **kw)
       if min_x == max_x
@@ -101,7 +100,7 @@ module UnicodePlot
                               data: nil,
                               border: :corners,
                               color: Boxplot::DEFAULT_COLOR,
-                              width: Boxplot::DEFAULT_WIDTH,
+                              width: Plot::DEFAULT_WIDTH,
                               xlim: [0, 0],
                               **kw)
     case args.length

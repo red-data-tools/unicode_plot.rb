@@ -1,7 +1,6 @@
 module UnicodePlot
   class GridPlot < Plot
     MIN_WIDTH = 5
-    DEFAULT_WIDTH = 40
     MIN_HEIGHT = 2
     DEFAULT_HEIGHT = 15
 
