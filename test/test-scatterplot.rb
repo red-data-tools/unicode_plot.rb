@@ -134,14 +134,13 @@ class ScatterplotTest < Test::Unit::TestCase
   end
 
   test("canvas size") do
-    omit("require dot canvas")
     plot = UnicodePlot.scatterplot(@x, @y,
                                    title: "Scatter",
                                    canvas: :dot,
                                    width: 10,
                                    height: 5)
     _, output = with_term { plot.render($stdout) }
-    assert_equal(fixture_path("scatterplot/canvassize.txt").read,
-                 output)
+    expected = fixture_path("scatterplot/canvassize.txt").read
+    assert_equal(expected, output)
   end
 end
