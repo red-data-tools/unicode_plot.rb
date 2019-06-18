@@ -4,7 +4,8 @@ module CanvasTestCases
 
   CANVAS_CLASSES = {
     ascii: UnicodePlot::AsciiCanvas,
-    braille: UnicodePlot::BrailleCanvas
+    braille: UnicodePlot::BrailleCanvas,
+    density: UnicodePlot::DensityCanvas
   }.freeze
 
   def self.included(mod)
@@ -119,6 +120,12 @@ end
 
 class AsciiCanvasTest < Test::Unit::TestCase
   CANVAS_NAME = :ascii
+
+  include CanvasTestCases
+end
+
+class DensityCanvasTest < Test::Unit::TestCase
+  CANVAS_NAME = :density
 
   include CanvasTestCases
 end
