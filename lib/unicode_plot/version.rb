@@ -1,5 +1,5 @@
 module UnicodePlot
-  VERSION = "0.0.2"
+  VERSION = "0.0.3"
 
   module Version
     numbers, TAG = VERSION.split("-", 2)
