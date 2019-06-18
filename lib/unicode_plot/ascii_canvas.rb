@@ -1,5 +1,5 @@
 module UnicodePlot
-  class AsciiCanvas < Canvas
+  class AsciiCanvas < LookupCanvas
     ASCII_SIGNS = [
       [ 0b100_000_000, 0b000_100_000, 0b000_000_100 ].freeze,
       [ 0b010_000_000, 0b000_010_000, 0b000_000_010 ].freeze,
@@ -105,45 +105,8 @@ module UnicodePlot
 
     def initialize(width, height, **kw)
       super(width, height,
-            width * PIXEL_PER_CHAR,
-            height * PIXEL_PER_CHAR,
-            0,
-            x_pixel_per_char: PIXEL_PER_CHAR,
-            y_pixel_per_char: PIXEL_PER_CHAR,
+            PIXEL_PER_CHAR, PIXEL_PER_CHAR,
             **kw)
-    end
-
-    def pixel!(pixel_x, pixel_y, color)
-      unless 0 <= pixel_x && pixel_x <= pixel_width &&
-             0 <= pixel_y && pixel_y <= pixel_height
-        return color
-      end
-      pixel_x -= 1 unless pixel_x < pixel_width
-      pixel_y -= 1 unless pixel_y < pixel_height
-
-      tx = pixel_x.fdiv(pixel_width) * width
-      char_x = tx.floor + 1
-      char_x_off = pixel_x % PIXEL_PER_CHAR + 1
-      char_x += 1 if char_x < tx.round + 1 && char_x_off == 1
-
-      char_y = (pixel_y.fdiv(pixel_height) * height).floor + 1
-      char_y_off = pixel_y % PIXEL_PER_CHAR + 1
-
-      index = index_at(char_x - 1, char_y - 1)
-      if index
-        @grid[index] |= lookup_encode(char_x_off - 1, char_y_off - 1)
-        @colors[index] |= COLOR_ENCODE[color]
-      end
-    end
-
-    def print_row(out, row_index)
-      unless 0 <= row_index && row_index < height
-        raise ArgumentError, "row_index out of bounds"
-      end
-      y = row_index
-      (0 ... width).each do |x|
-        print_color(out, color_at(x, y), lookup_decode(char_at(x, y)))
-      end
     end
 
     def lookup_encode(x, y)
