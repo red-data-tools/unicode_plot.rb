@@ -2,6 +2,7 @@
 
 - Add histogram support
 - Add barplot! method
+- Add scatterplot support
 
 # 0.0.2
 
