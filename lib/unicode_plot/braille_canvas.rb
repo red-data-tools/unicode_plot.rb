@@ -53,7 +53,6 @@ module UnicodePlot
 
     def print_row(out, row_index)
       unless 0 <= row_index && row_index < height
-        $stderr.puts [row_index, height].inspect
         raise ArgumentError, "row_index out of bounds"
       end
       y = row_index

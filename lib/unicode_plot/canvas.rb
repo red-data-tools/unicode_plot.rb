@@ -8,6 +8,8 @@ module UnicodePlot
         AsciiCanvas.new(width, height, **kw)
       when :braille
         BrailleCanvas.new(width, height, **kw)
+      when :density
+        DensityCanvas.new(width, height, **kw)
       else
         raise ArgumentError, "unknown canvas type: #{canvas_type}"
       end
@@ -22,8 +24,8 @@ module UnicodePlot
                    y_pixel_per_char: 1)
       @width = width
       @height = height
-      @pixel_width = pixel_width
-      @pixel_height = pixel_height
+      @pixel_width = check_positive(pixel_width, :pixel_width)
+      @pixel_height = check_positive(pixel_height, :pixel_height)
       @origin_x = origin_x
       @origin_y = origin_y
       @plot_width = plot_width
@@ -83,7 +85,7 @@ module UnicodePlot
     def point!(x, y, color)
       unless origin_x <= x && x <= origin_x + plot_width &&
              origin_y <= y && y <= origin_y + plot_height
-        return c
+        return color
       end
 
       plot_offset_x = x - origin_x
@@ -155,6 +157,11 @@ module UnicodePlot
       (0 ... (x.length - 1)).each do |i|
         line!(x[i], y[i], x[i+1], y[i+1], color)
       end
+    end
+
+    private def check_positive(value, name)
+      return value if value > 0
+      raise ArgumentError, "#{name} has to be positive"
     end
   end
 end
