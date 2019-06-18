@@ -136,5 +136,11 @@ module UnicodePlot
       end
       margin
     end
+
+    private def check_row_index(row_index)
+      unless 0 <= row_index && row_index < n_rows
+        raise ArgumentError, "row_index out of bounds"
+      end
+    end
   end
 end

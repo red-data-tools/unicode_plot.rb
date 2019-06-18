@@ -67,12 +67,6 @@ module UnicodePlot
       end
       [max, i]
     end
-
-    private def check_row_index(row_index)
-      unless 0 <= row_index && row_index < n_rows
-        raise ArgumentError, "row_index is out of range"
-      end
-    end
   end
 
   module_function def barplot(*args,
