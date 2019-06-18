@@ -3,7 +3,6 @@ module UnicodePlot
     include ValueTransformer
 
     MIN_WIDTH = 10
-    DEFAULT_WIDTH = 40
     DEFAULT_COLOR = :green
     DEFAULT_SYMBOL = "■"
 
@@ -68,16 +67,10 @@ module UnicodePlot
       end
       [max, i]
     end
-
-    private def check_row_index(row_index)
-      unless 0 <= row_index && row_index < n_rows
-        raise ArgumentError, "row_index is out of range"
-      end
-    end
   end
 
   module_function def barplot(*args,
-                              width: Barplot::DEFAULT_WIDTH,
+                              width: Plot::DEFAULT_WIDTH,
                               color: Barplot::DEFAULT_COLOR,
                               symbol: Barplot::DEFAULT_SYMBOL,
                               border: :barplot,

@@ -4,7 +4,6 @@ module UnicodePlot
   class Boxplot < Plot
     MIN_WIDTH = 10
     DEFAULT_COLOR = :green
-    DEFAULT_WIDTH = 40
 
     def initialize(data, width, color, min_x, max_x, **kw)
       if min_x == max_x
@@ -20,7 +19,8 @@ module UnicodePlot
       super(**kw)
     end
 
-    attr_reader :min_x, :max_x
+    attr_reader :min_x
+    attr_reader :max_x
 
     def n_data
       @data.length
@@ -89,19 +89,13 @@ module UnicodePlot
         val.round(half: :even).clamp(1, @width).to_i
       end
     end
-
-    private def check_row_index(row_index)
-      unless 0 <= row_index && row_index < n_rows
-        raise ArgumentError, "row_index out of bounds"
-      end
-    end
   end
 
   module_function def boxplot(*args,
                               data: nil,
                               border: :corners,
                               color: Boxplot::DEFAULT_COLOR,
-                              width: Boxplot::DEFAULT_WIDTH,
+                              width: Plot::DEFAULT_WIDTH,
                               xlim: [0, 0],
                               **kw)
     case args.length
