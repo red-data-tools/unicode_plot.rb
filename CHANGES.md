@@ -3,6 +3,7 @@
 - Add histogram support
 - Add barplot! method
 - Add scatterplot support
+- Add densityplot support
 
 # 0.0.2
 

@@ -30,6 +30,7 @@ You can get the results below by running the above script:
 
 - barplot
 - boxplot
+- densityplot
 - histogram
 - lineplot
 - scatterplot
