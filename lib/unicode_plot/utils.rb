@@ -64,8 +64,11 @@ module UnicodePlot
       end
     end
 
+    INT64_MIN = -9223372036854775808
+    INT64_MAX =  9223372036854775807
+
     def roundable?(x)
-      x.to_i == x
+      x.to_i == x && INT64_MIN <= x && x < INT64_MAX
     end
   end
 end

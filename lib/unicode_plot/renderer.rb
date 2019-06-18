@@ -220,7 +220,7 @@ module UnicodePlot
       @border_padding = " " * @plot_offset
 
       # compute position of ylabel
-      @y_lab_row = (plot.n_rows / 2.0).round
+      @y_lab_row = (plot.n_rows / 2.0).round - 1
     end
 
     def print_title(padding, title, p_width: 0, color: :normal)

@@ -10,8 +10,10 @@ require 'unicode_plot/ascii_canvas'
 require 'unicode_plot/braille_canvas'
 
 require 'unicode_plot/plot'
+require 'unicode_plot/grid_plot'
 
 require 'unicode_plot/barplot'
 require 'unicode_plot/boxplot'
 require 'unicode_plot/lineplot'
 require 'unicode_plot/histogram'
+require 'unicode_plot/scatterplot'
