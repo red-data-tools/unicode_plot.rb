@@ -69,7 +69,7 @@ plot.render($stdout)
 
 ### lineplot
 
-See Usage section above.
+See [Usage](#usage) section above.
 
 ### scatterplot
 
