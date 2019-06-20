@@ -30,7 +30,7 @@ You can get the results below by running the above script:
 
 ### barplot
 
-```
+```ruby
 plot = UnicodePlot.barplot(data: {'foo': 20, 'bar': 50}, title: "Bar")
 plot.render($stdout)
 ```
@@ -39,7 +39,7 @@ plot.render($stdout)
 
 ### boxplot
 
-```
+```ruby
 plot = UnicodePlot.boxplot(data: {foo: [1, 3, 5], bar: [3, 5, 7]}, title: "Box")
 plot.render($stdout)
 ```
