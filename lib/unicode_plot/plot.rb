@@ -124,7 +124,7 @@ module UnicodePlot
 
     def to_s
       StringIO.open do |sio|
-        render(sio)
+        render(sio, newline: false)
         sio.close
         sio.string
       end

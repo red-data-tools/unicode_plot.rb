@@ -59,8 +59,8 @@ module UnicodePlot
   class Renderer
     include BorderPrinter
 
-    def self.render(out, plot)
-      new(plot).render(out)
+    def self.render(out, plot, newline: true)
+      new(plot).render(out, newline: newline)
     end
 
     def initialize(plot)
@@ -71,13 +71,14 @@ module UnicodePlot
     attr_reader :plot
     attr_reader :out
 
-    def render(out)
+    def render(out, newline: true)
       @out = out
       init_render
 
       render_top
       render_rows
       render_bottom
+      out.puts if newline
     end
 
     private
