@@ -16,7 +16,7 @@ class DensityplotTest < Test::Unit::TestCase
     dy2 = @dy.map {|y| y + 2 }
     assert_same(plot,
                 UnicodePlot.densityplot!(plot, dx2, dy2))
-    _, output = with_term { plot.render($stdout) }
+    _, output = with_term { plot.render($stdout, newline: false) }
     expected = fixture_path("scatterplot/densityplot.txt").read
     assert_equal(output, expected)
   end
@@ -31,7 +31,7 @@ class DensityplotTest < Test::Unit::TestCase
     dy2 = @dy.map {|y| y + 2 }
     assert_same(plot,
                 UnicodePlot.densityplot!(plot, dx2, dy2, name: "bar"))
-    _, output = with_term { plot.render($stdout) }
+    _, output = with_term { plot.render($stdout, newline: false) }
     expected = fixture_path("scatterplot/densityplot_parameters.txt").read
     assert_equal(output, expected)
   end

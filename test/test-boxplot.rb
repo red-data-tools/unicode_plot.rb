@@ -6,14 +6,14 @@ class BoxplotTest < Test::Unit::TestCase
     sub_test_case("print to tty") do
       test("without name") do
         plot = UnicodePlot.boxplot([1, 2, 3, 4, 5])
-        _, output = with_term { plot.render($stdout) }
+        _, output = with_term { plot.render($stdout, newline: false) }
         assert_equal(fixture_path("boxplot/default.txt").read,
                      output)
       end
 
       test("with name") do
         plot = UnicodePlot.boxplot("series1", [1, 2, 3, 4, 5])
-        _, output = with_term { plot.render($stdout) }
+        _, output = with_term { plot.render($stdout, newline: false) }
         assert_equal(fixture_path("boxplot/default_name.txt").read,
                      output)
       end
@@ -28,14 +28,14 @@ class BoxplotTest < Test::Unit::TestCase
       end
 
       test("print to tty") do
-        _, output = with_term { @plot.render($stdout) }
+        _, output = with_term { @plot.render($stdout, newline: false) }
         assert_equal(fixture_path("boxplot/default_parameters.txt").read,
                      output)
       end
 
       test("print to non-tty IO") do
         output = StringIO.open do |sio|
-          @plot.render(sio)
+          @plot.render(sio, newline: false)
           sio.close
           sio.string
         end
@@ -49,7 +49,7 @@ class BoxplotTest < Test::Unit::TestCase
     test("with scaling") do
       i, max_x = data
       plot = UnicodePlot.boxplot([1, 2, 3, 4, 5], xlim: [0, max_x])
-      _, output = with_term { plot.render($stdout) }
+      _, output = with_term { plot.render($stdout, newline: false) }
       assert_equal(fixture_path("boxplot/scale#{i}.txt").read,
                    output)
     end
@@ -63,19 +63,19 @@ class BoxplotTest < Test::Unit::TestCase
                                  title: "Multi-series",
                                  xlabel: "foo",
                                  color: :yellow)
-      _, output = with_term { plot.render($stdout) }
+      _, output = with_term { plot.render($stdout, newline: false) }
       assert_equal(fixture_path("boxplot/multi1.txt").read,
                    output)
 
       assert_same(plot,
                   UnicodePlot.boxplot!(plot, "one more", [-1, 2, 3, 4, 11]))
-      _, output = with_term { plot.render($stdout) }
+      _, output = with_term { plot.render($stdout, newline: false) }
       assert_equal(fixture_path("boxplot/multi2.txt").read,
                    output)
 
       assert_same(plot,
                   UnicodePlot.boxplot!(plot, [4, 2, 2.5, 4, 14], name: "last one"))
-      _, output = with_term { plot.render($stdout) }
+      _, output = with_term { plot.render($stdout, newline: false) }
       assert_equal(fixture_path("boxplot/multi3.txt").read,
                    output)
     end
