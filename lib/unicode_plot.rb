@@ -1,3 +1,5 @@
+require 'stringio'
+
 require 'unicode_plot/version'
 
 require 'unicode_plot/utils'
