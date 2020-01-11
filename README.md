@@ -18,8 +18,7 @@ y_sin = x.map {|xi| Math.sin(xi) }
 y_cos = x.map {|xi| Math.cos(xi) }
 plot = UnicodePlot.lineplot(x, y_sin, name: "sin(x)", width: 40, height: 10)
 UnicodePlot.lineplot!(plot, x, y_cos, name: "cos(x)")
-plot.render($stdout)
-puts
+plot.render
 ```
 
 You can get the results below by running the above script:
@@ -31,8 +30,7 @@ You can get the results below by running the above script:
 ### barplot
 
 ```ruby
-plot = UnicodePlot.barplot(data: {'foo': 20, 'bar': 50}, title: "Bar")
-plot.render($stdout)
+UnicodePlot.barplot(data: {'foo': 20, 'bar': 50}, title: "Bar").render
 ```
 
 <img src="img/barplot.png" width="50%" />
@@ -40,8 +38,7 @@ plot.render($stdout)
 ### boxplot
 
 ```ruby
-plot = UnicodePlot.boxplot(data: {foo: [1, 3, 5], bar: [3, 5, 7]}, title: "Box")
-plot.render($stdout)
+UnicodePlot.boxplot(data: {foo: [1, 3, 5], bar: [3, 5, 7]}, title: "Box").render
 ```
 
 <img src="img/boxplot.png" width="50%" />
@@ -51,8 +48,7 @@ plot.render($stdout)
 ```ruby
 x = Array.new(500) { 20*rand - 10 } + Array.new(500) { 6*rand - 3 }
 y = Array.new(1000) { 30*rand - 10 }
-plot = UnicodePlot.densityplot(x, y, title: "Density")
-plot.render($stdout)
+UnicodePlot.densityplot(x, y, title: "Density").render
 ```
 
 <img src="img/densityplot.png" width="50%" />
@@ -61,8 +57,7 @@ plot.render($stdout)
 
 ```ruby
 x = Array.new(100) { rand(10) } + Array.new(100) { rand(30) + 10 }
-plot = UnicodePlot.histogram(x, title: "Histogram")
-plot.render($stdout)
+UnicodePlot.histogram(x, title: "Histogram").render
 ```
 
 <img src="img/histogram.png" width="50%" />
@@ -76,8 +71,7 @@ See [Usage](#usage) section above.
 ```ruby
 x = Array.new(50) { rand(20) - 10 }
 y = x.map {|xx| xx*rand(30) - 10 }
-plot = UnicodePlot.scatterplot(x, y, title: "Scatter")
-plot.render($stdout)
+UnicodePlot.scatterplot(x, y, title: "Scatter").render
 ```
 
 <img src="img/scatterplot.png" width="50%" />
