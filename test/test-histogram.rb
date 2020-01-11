@@ -108,5 +108,11 @@ class HistogramTest < Test::Unit::TestCase
       assert_equal(fixture_path("histogram/parameters2.txt").read,
                    output)
     end
+
+    test("issue #24") do
+      assert_nothing_raised do
+        UnicodePlot.histogram([1, 2])
+      end
+    end
   end
 end
