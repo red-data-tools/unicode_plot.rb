@@ -103,7 +103,7 @@ module UnicodePlot
       end
     end
 
-    def render(out, newline: true)
+    def render(out=$stdout, newline: true)
       Renderer.render(out, self, newline)
     end
 
