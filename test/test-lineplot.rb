@@ -173,7 +173,7 @@ class LineplotTest < Test::Unit::TestCase
       assert_equal(fixture_path("lineplot/parameters3.txt").read,
                    output)
       output = StringIO.open do |sio|
-        plot.render(sio)
+        plot.render(sio, newline: false)
         sio.close
         sio.string
       end

@@ -103,8 +103,8 @@ module UnicodePlot
       end
     end
 
-    def render(out)
-      Renderer.render(out, self)
+    def render(out, newline: true)
+      Renderer.render(out, self, newline)
     end
 
     COLOR_CYCLE = [

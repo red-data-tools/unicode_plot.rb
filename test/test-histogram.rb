@@ -9,7 +9,7 @@ class HistogramTest < Test::Unit::TestCase
 
     test("default") do
       plot = UnicodePlot.histogram(@x)
-      _, output = with_term { plot.render($stdout, newline: false) }
+      _, output = with_term { plot.render($stdout) }
       assert_equal("\n", output[-1])
       assert_equal(fixture_path("histogram/default.txt").read,
                    output.chomp)
