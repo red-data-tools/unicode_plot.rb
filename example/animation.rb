@@ -22,13 +22,14 @@ while continue
   lines.each do |line|
     $stdout.print "\r#{line}"
   end
+  $stdout.print "\e[0J"
   $stdout.flush
 
-  if continue
-    n = lines.count
-    $stdout.print "\e[#{n}F"
-    shift = (shift + M) % N
-  end
+  n = lines.count
+  $stdout.print "\e[#{n}F"
+  shift = (shift + M) % N
 
   sleep 0.2
 end
+
+$stdout.print "\e[0J"
