@@ -1,4 +1,5 @@
 # coding: utf-8
+
 =begin
 The `BlockCanvas` is also Unicode-based.
 It has half the resolution of the `BrailleCanvas`.
@@ -9,18 +10,29 @@ into 4 pixels that can individually be manipulated
 using binary operations.
 =end
 
-class BlockCanvas < LookupCanvas
-  
-  BLOCK_SIGNS = [0b1000, 0b0010,
-                 0b0100, 0b0001]
+module UnicodePlot
+  class BlockCanvas < LookupCanvas
+    X_PIXEL_PER_CHAR = 2
+    Y_PIXEL_PER_CHAR = 2
 
-  BLOCK_DECODE = [' ', '▗', '▖', '▄',
-                  '▝', '▐', '▞', '▟',
-                  '▘', '▚', '▌', '▙',
-                  '▀', '▜', '▛', '█' ]
+    def initialize(width, height, fill_char=0, **kw)
+      super(width, height,
+            X_PIXEL_PER_CHAR,
+            Y_PIXEL_PER_CHAR,
+            fill_char,
+            **kw)
+    end
+    
+    BLOCK_SIGNS = [ [0b1000, 0b0010].freeze,
+                    [0b0100, 0b0001].freeze
+                  ].freeze
 
-  def x_pixel_per_char ; 2 ; end
-  def y_pixel_per_char ; 2 ; end
-  def lookup_encode ; BLOCK_SIGNS ; end
-  def lookup_decode ; BLOCK_DECODE ; end
+    BLOCK_DECODE = [' ', '▗', '▖', '▄',
+                    '▝', '▐', '▞', '▟',
+                    '▘', '▚', '▌', '▙',
+                    '▀', '▜', '▛', '█' ].freeze
+
+    def lookup_encode(x,y) ; BLOCK_SIGNS[x][y] ; end
+    def lookup_decode(x) ; BLOCK_DECODE[x] ; end
+  end
 end
