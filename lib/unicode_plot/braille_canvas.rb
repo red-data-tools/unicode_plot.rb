@@ -36,17 +36,21 @@ module UnicodePlot
       pixel_x -= 1 unless pixel_x < pixel_width
       pixel_y -= 1 unless pixel_y < pixel_height
       tx = pixel_x.fdiv(pixel_width) * width
-      char_x = tx.floor + 1
-      char_x_off = pixel_x % X_PIXEL_PER_CHAR + 1
-      char_x += 1 if char_x < tx.round + 1 && char_x_off == 1
 
-      char_y = (pixel_y.fdiv(pixel_height) * height).floor + 1
-      char_y_off = pixel_y % Y_PIXEL_PER_CHAR + 1
+      char_x = tx.floor
+      char_x_off = pixel_x % X_PIXEL_PER_CHAR
+      char_x += 1 if char_x < tx.round && char_x_off == 0
 
-      index = index_at(char_x - 1, char_y - 1)
+      char_y_off = pixel_y % Y_PIXEL_PER_CHAR
+      char_y = (pixel_y - char_y_off) / Y_PIXEL_PER_CHAR
+
+      index = index_at(char_x, char_y)
       if index
-        @grid[index] = (@grid[index].ord | BRAILLE_SIGNS[char_x_off - 1][char_y_off - 1]).chr(Encoding::UTF_8)
-        @colors[index] |= COLOR_ENCODE[color]
+        @grid[index] = (@grid[index].ord | BRAILLE_SIGNS[char_x_off][char_y_off]).chr(Encoding::UTF_8)
+        # If we can fetch color from color-encode then or with the existing color.
+        # this works for cases where color is 0..7 and we implement a 'mixer'
+        # if color is beyond 7, then use it directly.
+        @colors[index] |= COLOR_ENCODE.fetch(color, color)
       end
       color
     end

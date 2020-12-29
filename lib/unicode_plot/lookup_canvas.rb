@@ -19,17 +19,17 @@ module UnicodePlot
       pixel_y -= 1 unless pixel_y < pixel_height
 
       tx = pixel_x.fdiv(pixel_width) * width
-      char_x = tx.floor + 1
-      char_x_off = pixel_x % x_pixel_per_char + 1
-      char_x += 1 if char_x < tx.round + 1 && char_x_off == 1
+      char_x = tx.floor
+      char_x_off = pixel_x % x_pixel_per_char
+      char_x += 1 if char_x < tx.round && char_x_off == 0
 
-      char_y = (pixel_y.fdiv(pixel_height) * height).floor + 1
-      char_y_off = pixel_y % y_pixel_per_char + 1
+      char_y_off = pixel_y % y_pixel_per_char
+      char_y = (pixel_y - char_y_off) / y_pixel_per_char
 
-      index = index_at(char_x - 1, char_y - 1)
+      index = index_at(char_x, char_y)
       if index
-        @grid[index] |= lookup_encode(char_x_off - 1, char_y_off - 1)
-        @colors[index] |= COLOR_ENCODE[color]
+        @grid[index] |= lookup_encode(char_x_off, char_y_off)
+        @colors[index] |= COLOR_ENCODE.fetch(color, color)
       end
     end
 

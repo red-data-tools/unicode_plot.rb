@@ -80,7 +80,7 @@ module UnicodePlot
     end
 
     def print_color(out, color, *args)
-      color = COLOR_DECODE[color]
+      color = COLOR_DECODE.fetch(color, color)
       print_styled(out, *args, color: color)
     end
 
