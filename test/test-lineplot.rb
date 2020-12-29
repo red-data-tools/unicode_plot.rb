@@ -194,6 +194,75 @@ class LineplotTest < Test::Unit::TestCase
 
     # TODO: functions
 
-    # TODO: stairs
+    sub_test_case("stairs") do
+      def setup
+        @sx = [1, 2, 4, 7, 8]
+        @sy = [1, 3, 4, 2, 7]
+      end
+
+      test("pre") do
+        plot = UnicodePlot.stairs(@sx, @sy, style: :pre)
+        _, output = with_term { plot.render($stdout, newline: false) }
+        assert_equal(fixture_path("lineplot/stairs_pre.txt").read, output)
+      end
+
+      test("post") do
+        # inferred post
+        plot = UnicodePlot.stairs(@sx, @sy)
+        _, output = with_term { plot.render($stdout, newline: false) }
+        assert_equal(fixture_path("lineplot/stairs_post.txt").read, output)
+        # explicit post
+        plot = UnicodePlot.stairs(@sx, @sy, style: :post)
+        _, output = with_term { plot.render($stdout, newline: false) }
+        assert_equal(fixture_path("lineplot/stairs_post.txt").read, output)
+      end
+
+      test("with parameters") do
+        plot = UnicodePlot.stairs(@sx, @sy, title: "Foo", color: :red, xlabel: "x", name: "1")
+        sx2 = @sx.map { |val| val - 0.2 }
+        sy2 = @sy.map { |val| val + 1.5 }
+        plot2 = UnicodePlot.stairs!(plot, sx2, sy2, name: "2")
+        assert_equal(plot.class, plot2.class)
+        _, output = with_term { plot.render($stdout, newline: false) }
+        assert_equal(fixture_path("lineplot/stairs_parameters.txt").read, output)
+
+        # add a 3rd staircase and check again
+        plot3 = UnicodePlot.stairs!(plot, @sx, @sy, name: "3", style: :pre)
+        assert_equal(plot.class, plot3.class)
+        _, output = with_term { plot.render($stdout, newline: false) }
+        assert_equal(fixture_path("lineplot/stairs_parameters2.txt").read, output)
+
+        # check with color disabled
+        output = StringIO.open do |sio|
+          plot.render(sio)
+          sio.close
+          sio.string
+        end
+        assert_equal("\n", output[-1])
+        assert_equal(fixture_path("lineplot/stairs_parameters2_nocolor.txt").read,
+                     output.chomp)
+      end
+
+      test("special weird case") do
+        plot = UnicodePlot.stairs(@sx, [1, 3, 4, 2, 7000])
+        _, output = with_term { plot.render($stdout, newline: false) }
+        assert_equal(fixture_path("lineplot/stairs_edgecase.txt").read, output)
+      end
+
+      test("annotations") do
+        plot = UnicodePlot.stairs(@sx, @sy, width: 10, padding: 3)
+        plot.annotate!(:tl, "Hello")
+        plot.annotate!(:t, "how are")
+        plot.annotate!(:tr, "you?")
+        plot.annotate!(:bl, "Hello")
+        plot.annotate!(:b, "how are")
+        plot.annotate!(:br, "you?")
+        UnicodePlot.lineplot!(plot, 1, 0.5)
+        _, output = with_term { plot.render($stdout, newline: false) }
+        assert_equal(fixture_path("lineplot/squeeze_annotations.txt").read, output)
+      end
+
+    end
+    
   end
 end
