@@ -46,7 +46,7 @@ module UnicodePlot
       index = index_at(char_x - 1, char_y - 1)
       if index
         @grid[index] = (@grid[index].ord | BRAILLE_SIGNS[char_x_off - 1][char_y_off - 1]).chr(Encoding::UTF_8)
-        @colors[index] |= COLOR_ENCODE[color]
+        @colors[index] |= COLOR_ENCODE.fetch(color, color)
       end
       color
     end
