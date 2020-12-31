@@ -40,8 +40,8 @@ module UnicodePlot
       char_x_off = pixel_x % X_PIXEL_PER_CHAR + 1
       char_x += 1 if char_x < tx.round + 1 && char_x_off == 1
 
-      char_y = (pixel_y.fdiv(pixel_height) * height).floor + 1
       char_y_off = pixel_y % Y_PIXEL_PER_CHAR + 1
+      char_y = ((pixel_y - (char_y_off - 1)) / Y_PIXEL_PER_CHAR) + 1
 
       index = index_at(char_x - 1, char_y - 1)
       if index
