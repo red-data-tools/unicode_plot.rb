@@ -6,7 +6,8 @@ module CanvasTestCases
     ascii: UnicodePlot::AsciiCanvas,
     braille: UnicodePlot::BrailleCanvas,
     density: UnicodePlot::DensityCanvas,
-    dot: UnicodePlot::DotCanvas
+    dot: UnicodePlot::DotCanvas,
+    block: UnicodePlot::BlockCanvas
   }.freeze
 
   def self.included(mod)
@@ -133,6 +134,12 @@ end
 
 class DotCanvasTest < Test::Unit::TestCase
   CANVAS_NAME = :dot
+
+  include CanvasTestCases
+end
+
+class BlockCanvasTest < Test::Unit::TestCase
+  CANVAS_NAME = :block
 
   include CanvasTestCases
 end
