@@ -4,6 +4,10 @@
   [GitHub#38][GitHub#17]
   [Patch by @nanobowers]
 
+- Add block canvas support
+  [GitHub#39][GitHub#19]
+  [Patch by @nanobowers]
+
 # 0.0.4
 
 - Fix error by requiring `stringio` [#22]
