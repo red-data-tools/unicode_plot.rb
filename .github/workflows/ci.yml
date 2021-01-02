@@ -17,32 +17,36 @@ jobs:
         - ubuntu-16.04
         - macos-latest
         - windows-latest
-        ruby_version:
+        ruby:
+        - 3.0
         - 2.7
         - 2.6
         - 2.5
         - 2.4
+        - debug
+        include:
+        - { os: windows-latest , ruby: mingw }
+        - { os: windows-latest , ruby: mswin }
+        exclude:
+        - { os: windows-latest , ruby: 3.0 }
+        - { os: windows-latest , ruby: debug }
 
     steps:
-    - name: Setup Ruby
-      if: matrix.ruby_version != 'master-nightly'
-      uses: eregon/use-ruby-action@master
-      with:
-        ruby-version: ${{ matrix.ruby_version }}
-
-    - name: Checkout
-      uses: actions/checkout@v1
+    - uses: actions/checkout@v2
       with:
         fetch-depth: 1
 
-    - name: Prepare environment
-      run: |
-        gem install bundler
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
 
-    - name: Install requirements
-      run: |
-        bundle install --jobs 4 --retry 3
+    - run: gem install bundler
 
-    - name: Test
-      run: |
-        bundle exec rake
+    - run: bundle install --jobs 4 --retry 3
+
+    - run: rake
+
+    - run: rake build
+
+    - run: gem install pkg/*.gem
