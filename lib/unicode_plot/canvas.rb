@@ -12,6 +12,8 @@ module UnicodePlot
         DensityCanvas.new(width, height, **kw)
       when :dot
         DotCanvas.new(width, height, **kw)
+      when :block
+        BlockCanvas.new(width, height, **kw)
       else
         raise ArgumentError, "unknown canvas type: #{canvas_type}"
       end
