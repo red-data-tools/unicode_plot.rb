@@ -12,7 +12,7 @@ continue = true
 Signal.trap(:INT) { continue = false }
 
 while continue
-  out.string = ""
+  out.truncate(0)
 
   xs = 0...N
   ys = xs.map {|x| Math.sin(2*Math::PI*(x + shift) / N) }
