@@ -25,11 +25,13 @@ while continue
   $stdout.print "\e[0J"
   $stdout.flush
 
-  n = lines.count
-  $stdout.print "\e[#{n}F"
-  shift = (shift + M) % N
-
   sleep 0.2
+
+  if continue
+    n = lines.count
+    $stdout.print "\e[#{n}F"
+    shift = (shift + M) % N
+  end
 end
 
 $stdout.print "\e[0J"
