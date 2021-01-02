@@ -261,8 +261,6 @@ class LineplotTest < Test::Unit::TestCase
         _, output = with_term { plot.render($stdout, newline: false) }
         assert_equal(fixture_path("lineplot/squeeze_annotations.txt").read, output)
       end
-
     end
-    
   end
 end

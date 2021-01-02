@@ -1,3 +1,9 @@
+# 0.0.5
+
+- Add stairs support
+  [GitHub#38][GitHub#17]
+  [Patch by @nanobowers]
+
 # 0.0.4
 
 - Fix error by requiring `stringio` [#22]
