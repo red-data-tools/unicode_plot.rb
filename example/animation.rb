@@ -12,7 +12,7 @@ continue = true
 Signal.trap(:INT) { continue = false }
 
 while continue
-  out.rewind
+  out.truncate(0)
 
   xs = 0...N
   ys = xs.map {|x| Math.sin(2*Math::PI*(x + shift) / N) }
@@ -22,13 +22,16 @@ while continue
   lines.each do |line|
     $stdout.print "\r#{line}"
   end
+  $stdout.print "\e[0J"
   $stdout.flush
+
+  sleep 0.2
 
   if continue
     n = lines.count
     $stdout.print "\e[#{n}F"
     shift = (shift + M) % N
   end
-
-  sleep 0.2
 end
+
+$stdout.print "\e[0J"
