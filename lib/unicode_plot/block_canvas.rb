@@ -1,5 +1,3 @@
-# coding: utf-8
-
 module UnicodePlot
   # The `BlockCanvas` is also Unicode-based.
   # It has half the resolution of the `BrailleCanvas`.
