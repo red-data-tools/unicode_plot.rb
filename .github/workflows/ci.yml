@@ -1,19 +1,26 @@
 name: CI
 
 on:
-- push
-- pull_request
+  push:
+    branches:
+    - master
+  pull_request:
+    types:
+    - opened
+    - synchronize
+    - reopened
 
 jobs:
   test:
     name: Test
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }} ${{ matrix.ruby }}
 
     strategy:
       fail-fast: false
       matrix:
         os:
-        - ubuntu-latest
+        - ubuntu-20.04
+        - ubuntu-18.04
         - ubuntu-16.04
         - macos-latest
         - windows-latest
