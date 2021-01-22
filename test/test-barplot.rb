@@ -12,6 +12,14 @@ class BarplotTest < Test::Unit::TestCase
       end
     end
 
+    sub_test_case("with invalid arguments") do
+      test("unknown border type") do
+        assert_raise(ArgumentError.new("unknown border type: invalid_border_name")) do
+          UnicodePlot.barplot(data: {bar: 23, foo: 37}, border: :invalid_border_name)
+        end
+      end
+    end
+
     test("colored") do
       data = { bar: 23, foo: 37 }
       plot = UnicodePlot.barplot(data: data)

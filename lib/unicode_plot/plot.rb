@@ -17,7 +17,7 @@ module UnicodePlot
       @title = title
       @xlabel = xlabel
       @ylabel = ylabel
-      @border = border
+      @border = check_border(border)
       @margin = check_margin(margin)
       @padding = padding
       @labels_left = {}
@@ -141,6 +141,11 @@ module UnicodePlot
       unless 0 <= row_index && row_index < n_rows
         raise ArgumentError, "row_index out of bounds"
       end
+    end
+
+    private def check_border(border)
+      return border if BORDER_MAP.key?(border)
+      raise ArgumentError, "unknown border type: #{border}"
     end
   end
 end

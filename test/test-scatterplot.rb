@@ -22,6 +22,14 @@ class ScatterplotTest < Test::Unit::TestCase
     end
   end
 
+  sub_test_case("with invalid arguments") do
+    test("unknown border type") do
+      assert_raise(ArgumentError.new("unknown border type: invalid_border_name")) do
+        UnicodePlot.scatterplot(@x, @y, border: :invalid_border_name)
+      end
+    end
+  end
+
   test("default") do
     plot = UnicodePlot.scatterplot(@x, @y)
     _, output = with_term { plot.render($stdout, newline: false) }

@@ -3,6 +3,14 @@ class BoxplotTest < Test::Unit::TestCase
   include Helper::WithTerm
 
   sub_test_case("UnicodePlot.boxplot") do
+    sub_test_case("with invalid arguments") do
+      test("unknown border type") do
+        assert_raise(ArgumentError.new("unknown border type: invalid_border_name")) do
+          UnicodePlot.boxplot([1, 2, 3, 4, 5], border: :invalid_border_name)
+        end
+      end
+    end
+
     sub_test_case("print to tty") do
       test("without name") do
         plot = UnicodePlot.boxplot([1, 2, 3, 4, 5])
