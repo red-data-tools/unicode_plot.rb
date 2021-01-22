@@ -2,6 +2,8 @@ require_relative 'lookup_canvas'
 
 module UnicodePlot
   class AsciiCanvas < LookupCanvas
+    Canvas::CANVAS_CLASS_MAP[:ascii] = self
+
     ASCII_SIGNS = [
       [ 0b100_000_000, 0b000_100_000, 0b000_000_100 ].freeze,
       [ 0b010_000_000, 0b000_010_000, 0b000_000_010 ].freeze,

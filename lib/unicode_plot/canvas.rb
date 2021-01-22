@@ -2,18 +2,13 @@ module UnicodePlot
   class Canvas
     include BorderPrinter
 
+    CANVAS_CLASS_MAP = {}
+
     def self.create(canvas_type, width, height, **kw)
-      case canvas_type
-      when :ascii
-        AsciiCanvas.new(width, height, **kw)
-      when :braille
-        BrailleCanvas.new(width, height, **kw)
-      when :density
-        DensityCanvas.new(width, height, **kw)
-      when :dot
-        DotCanvas.new(width, height, **kw)
-      when :block
-        BlockCanvas.new(width, height, **kw)
+      canvas_class = CANVAS_CLASS_MAP[canvas_type]
+      case canvas_class
+      when Class
+        canvas_class.new(width, height, **kw)
       else
         raise ArgumentError, "unknown canvas type: #{canvas_type}"
       end
@@ -168,6 +163,10 @@ module UnicodePlot
       raise ArgumentError, "#{name} has to be positive"
     end
   end
+
+  def self.canvas_types
+    Canvas::CANVAS_CLASS_MAP.keys
+  end
 end
 
 require_relative 'canvas/ascii_canvas'
@@ -175,3 +174,5 @@ require_relative 'canvas/block_canvas'
 require_relative 'canvas/braille_canvas'
 require_relative 'canvas/density_canvas'
 require_relative 'canvas/dot_canvas'
+
+UnicodePlot::Canvas::CANVAS_CLASS_MAP.freeze
