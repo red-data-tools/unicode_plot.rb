@@ -1,3 +1,5 @@
+require_relative 'lookup_canvas'
+
 module UnicodePlot
   class AsciiCanvas < LookupCanvas
     ASCII_SIGNS = [

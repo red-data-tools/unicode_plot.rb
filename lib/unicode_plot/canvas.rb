@@ -169,3 +169,9 @@ module UnicodePlot
     end
   end
 end
+
+require_relative 'canvas/ascii_canvas'
+require_relative 'canvas/block_canvas'
+require_relative 'canvas/braille_canvas'
+require_relative 'canvas/density_canvas'
+require_relative 'canvas/dot_canvas'
