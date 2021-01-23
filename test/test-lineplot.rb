@@ -192,6 +192,15 @@ class LineplotTest < Test::Unit::TestCase
                    output)
     end
 
+    test("fixed line y-interpolation bug (issue 32)") do
+      ys = [261, 272, 277, 283, 289, 294, 298, 305, 309, 314, 319, 320, 322, 323, 324]
+      xs = ys.size.times.to_a
+      plot = UnicodePlot.lineplot(xs, ys, height: 26, ylim: [0, 700])
+      _, output = with_term { plot.render($stdout, newline: false) }
+      assert_equal(fixture_path("lineplot/issue32_fix.txt").read,
+                   output)
+    end
+
     # TODO: functions
 
     sub_test_case("stairs") do
