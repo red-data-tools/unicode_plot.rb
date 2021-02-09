@@ -128,7 +128,7 @@ module UnicodePlot
       left_len  = nocolor_string(left_str).length
       right_len = nocolor_string(right_str).length
 
-      unless color?(out)
+      unless out.color?
         left_str  = nocolor_string(left_str)
         right_str = nocolor_string(right_str)
       end
