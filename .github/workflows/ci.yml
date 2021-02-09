@@ -52,8 +52,8 @@ jobs:
 
     - run: bundle install --jobs 4 --retry 3
 
-    - run: rake
+    - run: bundle exec rake
 
-    - run: rake build
+    - run: bundle exec rake build
 
     - run: gem install pkg/*.gem
