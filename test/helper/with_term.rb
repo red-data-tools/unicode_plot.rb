@@ -14,13 +14,15 @@ module Helper
 
     def with_term(tty=true)
       with_sio(tty: tty) do |sio|
-        orig_stdout, $stdout = $stdout, sio
-        orig_env = ENV.to_h.dup
-        ENV['TERM'] = 'xterm-256color'
-        yield
-      ensure
-        $stdout = orig_stdout
-        ENV.replace(orig_env) if orig_env
+        begin
+          orig_stdout, $stdout = $stdout, sio
+          orig_env = ENV.to_h.dup
+          ENV['TERM'] = 'xterm-256color'
+          yield
+        ensure
+          $stdout = orig_stdout
+          ENV.replace(orig_env) if orig_env
+        end
       end
     end
   end
