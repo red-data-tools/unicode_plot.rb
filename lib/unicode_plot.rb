@@ -2,6 +2,7 @@ require 'stringio'
 
 require 'unicode_plot/version'
 
+require 'unicode_plot/io_context'
 require 'unicode_plot/utils'
 require 'unicode_plot/styled_printer'
 require 'unicode_plot/value_transformer'

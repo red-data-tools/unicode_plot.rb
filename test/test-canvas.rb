@@ -55,11 +55,11 @@ module CanvasTestCases
 
       test("empty") do
         if self.class::CANVAS_NAME == :braille
-          _, output = with_term { @canvas.show($stdout) }
+          _, output = with_term { @canvas.show(UnicodePlot::IOContext.new($stdout)) }
           assert_equal(fixture_path("canvas/empty_braille_show.txt").read,
                        output)
         else
-          _, output = with_term { @canvas.show($stdout) }
+          _, output = with_term { @canvas.show(UnicodePlot::IOContext.new($stdout)) }
           assert_equal(fixture_path("canvas/empty_show.txt").read,
                        output)
         end
@@ -81,31 +81,31 @@ module CanvasTestCases
         end
 
         test("print_row") do
-          _, output = with_term { @canvas.print_row($stdout, 2) }
+          _, output = with_term { @canvas.print_row(UnicodePlot::IOContext.new($stdout), 2) }
           assert_equal(fixture_path("canvas/#{self.class::CANVAS_NAME}_printrow.txt").read,
                        output)
         end
 
         test("print") do
-          _, output = with_term { @canvas.print($stdout) }
+          _, output = with_term { @canvas.print(UnicodePlot::IOContext.new($stdout)) }
           assert_equal(fixture_path("canvas/#{self.class::CANVAS_NAME}_print.txt").read,
                        output)
         end
 
         test("print_nocolor") do
-          _, output = with_term(false) { @canvas.print($stdout) }
+          _, output = with_term(false) { @canvas.print(UnicodePlot::IOContext.new($stdout)) }
           assert_equal(fixture_path("canvas/#{self.class::CANVAS_NAME}_print_nocolor.txt").read,
                        output)
         end
 
         test("sow") do
-          _, output = with_term { @canvas.show($stdout) }
+          _, output = with_term { @canvas.show(UnicodePlot::IOContext.new($stdout)) }
           assert_equal(fixture_path("canvas/#{self.class::CANVAS_NAME}_show.txt").read,
                        output)
         end
 
         test("show_nocolor") do
-          _, output = with_term(false) { @canvas.show($stdout) }
+          _, output = with_term(false) { @canvas.show(UnicodePlot::IOContext.new($stdout)) }
           assert_equal(fixture_path("canvas/#{self.class::CANVAS_NAME}_show_nocolor.txt").read,
                        output)
         end

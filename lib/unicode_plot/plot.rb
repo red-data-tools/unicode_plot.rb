@@ -103,8 +103,8 @@ module UnicodePlot
       end
     end
 
-    def render(out=$stdout, newline: true)
-      Renderer.render(out, self, newline)
+    def render(out=$stdout, newline: true, color: :auto)
+      Renderer.render(IOContext.new(out, color: color), self, newline)
     end
 
     COLOR_CYCLE = [

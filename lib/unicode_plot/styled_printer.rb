@@ -58,7 +58,7 @@ module UnicodePlot
     COLOR_DECODE = COLOR_ENCODE.map {|k, v| [v, k] }.to_h.freeze
 
     def print_styled(out, *args, bold: false, color: :normal)
-      return out.print(*args) unless color?(out)
+      return out.print(*args) unless out.color?
 
       str = StringIO.open {|sio| sio.print(*args); sio.close; sio.string }
       color = :nothing if bold && color == :bold
@@ -82,10 +82,6 @@ module UnicodePlot
     def print_color(out, color, *args)
       color = COLOR_DECODE[color]
       print_styled(out, *args, color: color)
-    end
-
-    def color?(out)
-      out&.tty? || false
     end
   end
 end
