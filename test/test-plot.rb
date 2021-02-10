@@ -1,6 +1,8 @@
 require 'stringio'
 
 class TestPlot < Test::Unit::TestCase
+  include Helper::WithTerm
+
   sub_test_case("#render") do
     test("render to $stdout when no arguments") do
       sio = StringIO.new
@@ -18,14 +20,17 @@ class TestPlot < Test::Unit::TestCase
     end
 
     test("color: true") do
-      sio_notty = StringIO.new
-      UnicodePlot.barplot(data: {a: 23, b: 37}).render(sio_notty, color: true)
+      _, tty_output   = with_sio(tty: true)  {|sio| UnicodePlot.barplot(data: {a: 23, b: 37}).render(sio) }
+      _, notty_output = with_sio(tty: false) {|sio| UnicodePlot.barplot(data: {a: 23, b: 37}).render(sio, color: true) }
 
-      class << (sio_tty = StringIO.new)
-        def tty?; true; end
-      end
-      UnicodePlot.barplot(data: {a: 23, b: 37}).render(sio_tty)
-      assert_equal(sio_tty.string, sio_notty.string)
+      assert_equal(tty_output, notty_output)
+    end
+
+    test("color: false") do
+      _, tty_output   = with_sio(tty: true)  {|sio| UnicodePlot.barplot(data: {a: 23, b: 37}).render(sio, color: false) }
+      _, notty_output = with_sio(tty: false) {|sio| UnicodePlot.barplot(data: {a: 23, b: 37}).render(sio) }
+
+      assert_equal(tty_output, notty_output)
     end
   end
 end
