@@ -2,3 +2,7 @@ Gemfile.lock
 pkg/
 tmp/
 *~
+
+# to prevent yard documentation from accidentally being checked in
+.yardoc/
+doc/
