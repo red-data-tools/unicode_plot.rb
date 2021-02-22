@@ -48,8 +48,6 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
 
-    - run: gem install bundler
-
     - run: bundle install --jobs 4 --retry 3
 
     - run: bundle exec rake
