@@ -69,6 +69,57 @@ module UnicodePlot
     end
   end
 
+  # @overload barplot(text, heights, xscale: nil, title: nil, xlabel: nil, ylabel: nil, labels: true, border: :barplot, margin: Plot::DEFAULT_MARGIN, padding: Plot::DEFAULT_PADDING, color: Barplot::DEFAULT_COLOR, width: Plot::DEFAULT_WIDTH, symbol: Barplot::DEFAULT_SYMBOL)
+  #
+  #   Draws a horizontal barplot.
+  #
+  #   @param text [Array<String>] The lables / captions of the bars.
+  #   @param heights [Array<Numeric>] The values / heights of the bars.
+  #   @param xscale [nil,:log,:ln,:log10,:lg,:log2,:lb,callable]
+  #          A function name symbol or callable object to transform the bar
+  #          length before plotting.  This effectively scales the x-axis
+  #          without influencing the captions of the individual bars.
+  #          e.g. use `xscale: :log10` for logscale.
+  #   @param title
+  #   @param xlabel
+  #   @param ylabel
+  #   @param labels
+  #   @param border
+  #   @param margin
+  #   @param padding
+  #   @param color
+  #   @param width
+  #   @param symbol [String] Specifies the character that should be used
+  #          to render the bars.
+  #
+  #   @return [Barplot] A plot object.
+  #
+  #   @example Example usage of barplot on IRB:
+  #
+  #       >> UnicodePlot.barplot(["Paris", "New York", "Moskau", "Madrid"],
+  #                              [2.244, 8.406, 11.92, 3.165],
+  #                              xlabel: "population [in mil]").render
+  #                   ┌                                        ┐
+  #             Paris ┤■■■■■■ 2.244
+  #          New York ┤■■■■■■■■■■■■■■■■■■■■■■■ 8.406
+  #            Moskau ┤■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 11.92
+  #            Madrid ┤■■■■■■■■■ 3.165
+  #                   └                                        ┘
+  #                              population [in mil]
+  #       => nil
+  #
+  #   @see Plot
+  #   @see histogram
+  #   @see Barplot
+  #
+  # @overload barplot(data, **kwargs)
+  #
+  #   The different variation of barplot described above.
+  #
+  #   @param data [Hash] A hash in which the keys will be used as `text` and
+  #          the values will be utilized as `heights`.
+  #   @param kwargs Optional keyword arguments same as ones described above.
+  #   @return [Barplot] A plot object.
   module_function def barplot(*args,
                               width: Plot::DEFAULT_WIDTH,
                               color: Barplot::DEFAULT_COLOR,
@@ -108,10 +159,24 @@ module UnicodePlot
     plot
   end
 
+  # @overload barplot!(plot, text, heights)
+  #
+  #   Draw additional bars on the given existing plot.
+  #
+  #   @param plot [Barplot] the existing plot.
+  #   @return [Barplot] A plot object.
+  #
+  #   @see barplot
+  #
+  # @overload barplot!(plot, data)
+  #
+  #   The different variation of `barplot!` that takes the plotting data in a hash.
+  #
+  #   @param plot [Barplot] the existing plot.
+  #   @return [Barplot] A plot object.
   module_function def barplot!(plot,
                                *args,
-                               data: nil,
-                               **kw)
+                               data: nil)
     case args.length
     when 0
       data = Hash(data)
