@@ -2,28 +2,31 @@
 
 module UnicodePlot
 
-  # == Description
+  # ## Description
   # 
   # Draw a stem-leaf plot of the given vector +vec+.
-  #   
-  #   stemplot(vec, **kwargs)
-  # 
+  #
+  # ```  
+  # stemplot(vec, **kwargs)
+  # ```
   # 
   # Draw a back-to-back stem-leaf plot of the given vectors +vec1+ and +vec2+.
-  #   
-  #   stemplot(vec, vec2, **kwargs)
-  # 
+  #
+  # ```  
+  # stemplot(vec1, vec2, **kwargs)
+  # ```
+  #
   # The vectors can be any object that converts to an Array, e.g. an Array, Range, etc.
   # If all elements of the vector are Numeric, the stem-leaf plot is classified as a
-  # +NumericStemplot+, otherwise it is classified as a StringStemplot.  Back-to-back 
+  # {NumericStemplot}, otherwise it is classified as a {StringStemplot}.  Back-to-back 
   # stem-leaf plots must be the same type, i.e. String and Numeric stem-leaf plots cannot
   # be mixed in a back-to-back plot.
   # 
-  # == Usage
+  # ## Usage
   # 
-  #   stemplot(vec, [vec2], scale:, divider:, padchar:, trim: )
+  #     stemplot(vec, [vec2], scale:, divider:, padchar:, trim: )
   # 
-  # == Arguments
+  # ## Arguments
   # 
   # - +vec+: Vector for which the stem leaf plot should be computed.
   # - +vec2+: Optional secondary vector, will be used to create a back-to-back stem-leaf plot.
@@ -33,56 +36,61 @@ module UnicodePlot
   # - +trim+: Trims the stem labels when there are no leaves.  This can be useful if your data is sparse. Default = +false+
   # - +string_padchar+: Character used to replace missing position for input strings shorter than the stem-size.  Default = "_"
   # 
-  # == Results
-  # A plot of object type is sent to $stdout
+  # ## Result
+  # A plot of object type is sent to <tt>$stdout</tt>
   # 
-  # == Examples using Numbers
-  #  
-  #  # Generate some numbers
-  #  fifty_floats = 50.times.map { rand(-1000..1000)/350.0 }
-  #  eighty_ints = 80.times.map { rand(1..100) }
-  #  another_eighty_ints = 80.times.map { rand(1..100) }
-  #  three_hundred_ints = 300.times.map { rand(-100..100) }
-  #  
-  #  # Single sided stem-plot 
-  #  UnicodePlot.stemplot(eighty_ints)
-  # 
-  #  # Single sided stem-plot with positive and negative values
-  #  UnicodePlot.stemplot(three_hundred_ints)
-  #  
-  #  # Single sided stem-plot using floating point values, scaled
-  #  UnicodePlot.stemplot(fifty_floats, scale: 1)
-  #  
-  #  # Single sided stem-plot using floating point values, scaled with new divider
-  #  UnicodePlot.stemplot(fifty_floats, scale: 1, divider: "😄")
-  #  
-  #  # Back to back stem-plot 
-  #  UnicodePlot.stemplot(eighty_ints, another_eighty_ints)
-  #  
-  # == Examples using Strings
-  # 
-  #  # Generate some strings
-  #  words_1 = %w[apple junk ant age bee bar baz dog egg a]
-  #  words_2 = %w[ape flan can cat juice elf gnome child fruit]
-  # 
-  #  # Single sided stem-plot 
-  #  UnicodePlot.stemplot(words_1)
-  #  
-  #  # Back to back stem-plot 
-  #  UnicodePlot.stemplot(words_1, words_2)
-  #  
-  #  # Scaled stem plot using scale=100 (two letters for the stem) and trimmed stems
-  #  UnicodePlot.stemplot(words_1, scale: 100, trim: true)
-  # 
-  #  # Above, but changing the string_padchar
-  #  UnicodePlot.stemplot(words_1, scale: 100, trim: true, string_padchar: '?')
+  # @example Examples using Numbers
+  #     # Generate some numbers
+  #     fifty_floats = 50.times.map { rand(-1000..1000)/350.0 }
+  #     eighty_ints = 80.times.map { rand(1..100) }
+  #     another_eighty_ints = 80.times.map { rand(1..100) }
+  #     three_hundred_ints = 300.times.map { rand(-100..100) }
+  #     
+  #     # Single sided stem-plot 
+  #     UnicodePlot.stemplot(eighty_ints)
+  #     
+  #     # Single sided stem-plot with positive and negative values
+  #     UnicodePlot.stemplot(three_hundred_ints)
+  #     
+  #     # Single sided stem-plot using floating point values, scaled
+  #     UnicodePlot.stemplot(fifty_floats, scale: 1)
+  #     
+  #     # Single sided stem-plot using floating point values, scaled with new divider
+  #     UnicodePlot.stemplot(fifty_floats, scale: 1, divider: "😄")
+  #     
+  #     # Back to back stem-plot 
+  #     UnicodePlot.stemplot(eighty_ints, another_eighty_ints)
+  #
+  # @example Examples using Strings
+  #     # Generate some strings
+  #     words_1 = %w[apple junk ant age bee bar baz dog egg a]
+  #     words_2 = %w[ape flan can cat juice elf gnome child fruit]
+  #     
+  #     # Single sided stem-plot 
+  #     UnicodePlot.stemplot(words_1)
+  #     
+  #     # Back to back stem-plot 
+  #     UnicodePlot.stemplot(words_1, words_2)
+  #     
+  #     # Scaled stem plot using scale=100 (two letters for the stem) and trimmed stems
+  #     UnicodePlot.stemplot(words_1, scale: 100, trim: true)
+  #     
+  #     # Above, but changing the string_padchar
+  #     UnicodePlot.stemplot(words_1, scale: 100, trim: true, string_padchar: '?')
 
   class Stemplot
 
+    # Use {factory} method -- should not be directly called. 
     def initialize(*_args, **_kw)
       @stemleafs = {}
     end
 
+    # Factory method to create a Stemplot, creates either a NumericStemplot
+    # or StringStemplot depending on input.
+    #
+    # @param vector [Array] An array of elements to stem-leaf plot
+    # @return [NumericStemplot] If all elements are Numeric
+    # @return [StringStemplot] If any elements are not Numeric
     def self.factory(vector, **kw)
       vec = Array(vector)
       if vec.all? { |item| item.is_a?(Numeric) }
@@ -92,24 +100,34 @@ module UnicodePlot
       end
     end
 
+    # Insert a stem and leaf
     def insert(stem, leaf)
       @stemleafs[stem] ||= []
       @stemleafs[stem] << leaf
     end
 
+    # Returns an unsorted list of stems
+    # @return [Array] Unsorted list of stems
     def raw_stems
       @stemleafs.keys
     end
     
+    # Returns a list of leaves for a given stem
+    # @param stem [Object] The stem
+    # @return [Array] Unsorted list of leaves
     def leaves(stem)
       @stemleafs[stem] || []
     end
 
+    # Determines largest length of any stem
+    # @return [Integer] Length value
     def max_stem_length
       @stemleafs.values.map(&:length).max
     end
 
-    # instance method to return sorted list of stems.
+    # Returns a sorted list of stems
+    # @param all [Boolean] Return all stems if true, otherwise only return stems if a leaf exists for a stem
+    # @return [Array] Sorted list of stems
     def stems(all: true)
       self.class.sorted_stem_list(raw_stems, all: all)
     end
@@ -129,7 +147,10 @@ module UnicodePlot
         self.insert(stem, leaf)
       end
     end
-    
+
+    # Print key to STDOUT
+    # @param scale [Integer] Scale, should be a power of 10
+    # @param divider [String] Divider character between stem and leaf
     def print_key(scale, divider)
       # First print the key
       puts "Key: 1#{divider}0 = #{scale}"
@@ -140,8 +161,10 @@ module UnicodePlot
       puts "The decimal is #{ndigits} digit(s) to the #{right_or_left} of #{divider}"
     end
     
-    # class method to return sorted list of stems.
-    # used when we have stems from a dual-plot
+    # Used when we have stems from a back-to-back stemplot and a combined list of stems is given
+    # @param stems [Array] Concatenated list of stems from two plots
+    # @param all [Boolean] Return all stems if true, otherwise only return stems if a leaf exists for a stem
+    # @return [Array] Sorted list of stems
     def self.sorted_stem_list(stems, all: true)
       negkeys, poskeys = stems.partition { |str| str[0] == '-'}
       if all
@@ -174,19 +197,18 @@ module UnicodePlot
       end
     end
     
-    def print_key(scale, divider)
+    # Function prototype to provide same interface as {NumericStemplot}.
+    # This function does not do anything.
+    # @return [false]
+    def print_key(_scale, _divider)
       # intentionally empty
       return false
-      # First print the key
-      puts ""
-      puts "Key: 1#{divider}0 = #{scale}"
-      # Description of where the decimal is
-      trunclog = Math.log10(scale).truncate
-      ndigits = trunclog.abs
-      right_or_left = (trunclog < 0) ? "left" : "right"
-      puts "The decimal is #{ndigits} digit(s) to the #{right_or_left} of #{divider}"
     end
 
+    # Used when we have stems from a back-to-back stemplot and a combined list of stems is given
+    # @param stems [Array] Concatenated list of stems from two plots
+    # @param all [Boolean] Return all stems if true, otherwise only return stems if a leaf exists for a stem
+    # @return [Array] Sorted list of stems
     def self.sorted_stem_list(stems, all: true)
       if all
         rmin, rmax = stems.minmax
@@ -197,7 +219,17 @@ module UnicodePlot
     end
     
   end
-  # single-vector stemplot
+  
+  # Print a Single-Vector stemplot to STDOUT.
+  #
+  # - Stem data is printed on the left.
+  # - Leaf data is printed on the right.
+  # - Key is printed at the bottom.
+  # @param plt [Stemplot] Stemplot object
+  # @param scale [Integer] Scale, should be a power of 10
+  # @param divider [String] Divider character between stem and leaf
+  # @param padchar [String] Padding character
+  # @param trim [Boolean] Trim missing stems from the plot
   def stemplot1!(plt, 
                  scale: 10,
                  divider: "|",
@@ -218,7 +250,18 @@ module UnicodePlot
     plt.print_key(scale, divider)
   end
 
-  # back-to-back stemplot
+  # Print a Back-to-Back Stemplot to STDOUT
+  #
+  # - +plt1+ Leaf data is printed on the left.
+  # - Common stem data is printed in the center.
+  # - +plt2+ Leaf data is printed on the right.
+  # - Key is printed at the bottom.
+  # @param plt1 [Stemplot] Stemplot object for the left side
+  # @param plt2 [Stemplot] Stemplot object for the right side
+  # @param scale [Integer] Scale, should be a power of 10
+  # @param divider [String] Divider character between stem and leaf
+  # @param padchar [String] Padding character
+  # @param trim [Boolean] Trim missing stems from the plot
   def stemplot2!(plt1, plt2,
                  scale: 10,
                  divider: "|",
@@ -244,7 +287,39 @@ module UnicodePlot
 
   end
 
-  # Single or Double
+  # Generates one or more {Stemplot} objects from the input data
+  # and prints a Single or Double stemplot using {stemplot1!} or {stemplot2!}
+  # @see Stemplot
+  # @example Single sided stemplot
+  #     >> UnicodePlot.stemplot(eighty_ints)
+  #     0 | 257
+  #     1 | 00335679
+  #     2 | 034455899
+  #     3 | 145588
+  #     4 | 0022223
+  #     5 | 0223399
+  #     6 | 012345568889
+  #     7 | 01133334466777888
+  #     8 | 013689
+  #     9 | 22667
+  #     Key: 1|0 = 10
+  #     The decimal is 1 digit(s) to the right of |
+  #
+  # @example Back-to-back stemplot
+  #     >> UnicodePlot.stemplot(eighty_ints, another_eighty_ints)
+  #                   752 | 0 | 1244457899
+  #              97653300 | 1 | 4799
+  #             998554430 | 2 | 015668
+  #                885541 | 3 | 0144557888899
+  #               3222200 | 4 | 00268
+  #               9933220 | 5 | 0234778
+  #          988865543210 | 6 | 122222357889
+  #     88877766443333110 | 7 | 134556689
+  #                986310 | 8 | 24589
+  #                 76622 | 9 | 022234468
+  #     Key: 1|0 = 10
+  #     The decimal is 1 digit(s) to the right of |
+  #
   def stemplot(*args, scale: 10, **kw)
     case args.length
     when 1
