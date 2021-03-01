@@ -7,6 +7,8 @@ module UnicodePlot
   # into 4 pixels that can individually be manipulated
   # using binary operations.
   class BlockCanvas < LookupCanvas
+    Canvas::CANVAS_CLASS_MAP[:block] = self
+
     X_PIXEL_PER_CHAR = 2
     Y_PIXEL_PER_CHAR = 2
 

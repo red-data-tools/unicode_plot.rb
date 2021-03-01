@@ -1,5 +1,7 @@
 module UnicodePlot
   class DensityCanvas < Canvas
+    Canvas::CANVAS_CLASS_MAP[:density] = self
+
     DENSITY_SIGNS = [" ", "░", "▒", "▓", "█"].freeze
 
     MIN_WIDTH = 5

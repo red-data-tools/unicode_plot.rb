@@ -9,12 +9,6 @@ require 'unicode_plot/value_transformer'
 require 'unicode_plot/renderer'
 
 require 'unicode_plot/canvas'
-require 'unicode_plot/braille_canvas'
-require 'unicode_plot/density_canvas'
-require 'unicode_plot/lookup_canvas'
-require 'unicode_plot/ascii_canvas'
-require 'unicode_plot/dot_canvas'
-require 'unicode_plot/block_canvas'
 
 require 'unicode_plot/plot'
 require 'unicode_plot/grid_plot'

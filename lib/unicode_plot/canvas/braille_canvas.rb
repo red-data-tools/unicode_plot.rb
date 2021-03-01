@@ -1,5 +1,7 @@
 module UnicodePlot
   class BrailleCanvas < Canvas
+    Canvas::CANVAS_CLASS_MAP[:braille] = self
+
     X_PIXEL_PER_CHAR = 2
     Y_PIXEL_PER_CHAR = 4
 

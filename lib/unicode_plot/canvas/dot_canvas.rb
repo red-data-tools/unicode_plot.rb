@@ -1,5 +1,7 @@
 module UnicodePlot
   class DotCanvas < LookupCanvas
+    Canvas::CANVAS_CLASS_MAP[:dot] = self
+
     DOT_SIGNS = [
                   [
                     0b10,
