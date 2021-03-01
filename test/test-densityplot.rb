@@ -10,6 +10,14 @@ class DensityplotTest < Test::Unit::TestCase
     assert_equal(1000, @dy.length)
   end
 
+  sub_test_case("with invalid arguments") do
+    test("unknown border type") do
+      assert_raise(ArgumentError.new("unknown border type: invalid_border_name")) do
+        UnicodePlot.densityplot(@dx, @dy, border: :invalid_border_name)
+      end
+    end
+  end
+
   test("default") do
     plot = UnicodePlot.densityplot(@dx, @dy)
     dx2 = @dx.map {|x| x + 2 }

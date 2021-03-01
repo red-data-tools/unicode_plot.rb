@@ -7,6 +7,14 @@ class HistogramTest < Test::Unit::TestCase
       @x = fixture_path("randn.txt").read.lines.map(&:to_f)
     end
 
+    sub_test_case("with invalid arguments") do
+      test("unknown border type") do
+        assert_raise(ArgumentError.new("unknown border type: invalid_border_name")) do
+          UnicodePlot.histogram(@x, border: :invalid_border_name)
+        end
+      end
+    end
+
     test("default") do
       plot = UnicodePlot.histogram(@x)
       _, output = with_term { plot.render($stdout) }

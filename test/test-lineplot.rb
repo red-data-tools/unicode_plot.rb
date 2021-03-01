@@ -23,6 +23,14 @@ class LineplotTest < Test::Unit::TestCase
       assert_raise(ArgumentError) { UnicodePlot.lineplot(1..3, 1..2) }
     end
 
+    sub_test_case("with invalid arguments") do
+      test("unknown border type") do
+        assert_raise(ArgumentError.new("unknown border type: invalid_border_name")) do
+          UnicodePlot.lineplot(@x, @y, border: :invalid_border_name)
+        end
+      end
+    end
+
     sub_test_case("with numeric array") do
       test("default") do
         plot = UnicodePlot.lineplot(@x, @y)

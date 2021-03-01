@@ -40,6 +40,10 @@ module UnicodePlot
     barplot: BorderMaps::BORDER_BARPLOT,
   }.freeze
 
+  def self.border_types
+    BORDER_MAP.keys
+  end
+
   module BorderPrinter
     include StyledPrinter
 
