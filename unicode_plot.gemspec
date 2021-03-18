@@ -19,6 +19,9 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://github.com/red-data-tools/unicode_plot.rb"
   spec.license = "MIT"
 
+  spec.metadata ||= {}
+  spec.metadata[:documentation_uri] = "https://red-data-tools.github.io/unicode_plot.rb/#{spec.version}/"
+
   spec.files = ["README.md", "Rakefile", "Gemfile", "#{spec.name}.gemspec"]
   spec.files << "LICENSE.txt"
   spec.files.concat Dir.glob("lib/**/*.rb")
