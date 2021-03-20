@@ -1,0 +1,9 @@
+--asset src/img:img
+--load yard-helper.rb
+--markup markdown
+--no-private
+--readme src/README.md
+src/lib/**/*.rb
+-
+src/CHANGES.md
+src/LICENSE.txt
