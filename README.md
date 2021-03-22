@@ -8,4 +8,4 @@ UnicodePlot provides the feature to make charts with Unicode characters.
 
 ## GitHub
 
-https://github.com/red-data-tools/unicode_plot.rb
+[red-data-tools/unicode_plot.rb](https://github.com/red-data-tools/unicode_plot.rb)
