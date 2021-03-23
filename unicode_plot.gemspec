@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.license = "MIT"
 
   spec.metadata ||= {}
-  spec.metadata[:documentation_uri] = "https://red-data-tools.github.io/unicode_plot.rb/#{spec.version}/"
+  spec.metadata["documentation_uri"] = "https://red-data-tools.github.io/unicode_plot.rb/#{spec.version}/"
 
   spec.files = ["README.md", "Rakefile", "Gemfile", "#{spec.name}.gemspec"]
   spec.files << "LICENSE.txt"
