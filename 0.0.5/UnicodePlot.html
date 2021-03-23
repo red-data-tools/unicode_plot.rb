@@ -1,0 +1,3334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: UnicodePlot
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "UnicodePlot";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (U)</a> &raquo;
+    
+    
+    <span class="title">UnicodePlot</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: UnicodePlot
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>src/lib/unicode_plot/plot.rb<span class="defines">,<br />
+  src/lib/unicode_plot/utils.rb,<br /> src/lib/unicode_plot/canvas.rb,<br /> src/lib/unicode_plot/stairs.rb,<br /> src/lib/unicode_plot/barplot.rb,<br /> src/lib/unicode_plot/boxplot.rb,<br /> src/lib/unicode_plot/version.rb,<br /> src/lib/unicode_plot/lineplot.rb,<br /> src/lib/unicode_plot/renderer.rb,<br /> src/lib/unicode_plot/stemplot.rb,<br /> src/lib/unicode_plot/grid_plot.rb,<br /> src/lib/unicode_plot/histogram.rb,<br /> src/lib/unicode_plot/io_context.rb,<br /> src/lib/unicode_plot/densityplot.rb,<br /> src/lib/unicode_plot/scatterplot.rb,<br /> src/lib/unicode_plot/styled_printer.rb,<br /> src/lib/unicode_plot/canvas/dot_canvas.rb,<br /> src/lib/unicode_plot/value_transformer.rb,<br /> src/lib/unicode_plot/canvas/ascii_canvas.rb,<br /> src/lib/unicode_plot/canvas/block_canvas.rb,<br /> src/lib/unicode_plot/canvas/lookup_canvas.rb,<br /> src/lib/unicode_plot/canvas/braille_canvas.rb,<br /> src/lib/unicode_plot/canvas/density_canvas.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="UnicodePlot/BorderMaps.html" title="UnicodePlot::BorderMaps (module)">BorderMaps</a></span>, <span class='object_link'><a href="UnicodePlot/BorderPrinter.html" title="UnicodePlot::BorderPrinter (module)">BorderPrinter</a></span>, <span class='object_link'><a href="UnicodePlot/StyledPrinter.html" title="UnicodePlot::StyledPrinter (module)">StyledPrinter</a></span>, <span class='object_link'><a href="UnicodePlot/Utils.html" title="UnicodePlot::Utils (module)">Utils</a></span>, <span class='object_link'><a href="UnicodePlot/ValueTransformer.html" title="UnicodePlot::ValueTransformer (module)">ValueTransformer</a></span>, <span class='object_link'><a href="UnicodePlot/Version.html" title="UnicodePlot::Version (module)">Version</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="UnicodePlot/AsciiCanvas.html" title="UnicodePlot::AsciiCanvas (class)">AsciiCanvas</a></span>, <span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span>, <span class='object_link'><a href="UnicodePlot/BlockCanvas.html" title="UnicodePlot::BlockCanvas (class)">BlockCanvas</a></span>, <span class='object_link'><a href="UnicodePlot/Boxplot.html" title="UnicodePlot::Boxplot (class)">Boxplot</a></span>, <span class='object_link'><a href="UnicodePlot/BrailleCanvas.html" title="UnicodePlot::BrailleCanvas (class)">BrailleCanvas</a></span>, <span class='object_link'><a href="UnicodePlot/Canvas.html" title="UnicodePlot::Canvas (class)">Canvas</a></span>, <span class='object_link'><a href="UnicodePlot/DensityCanvas.html" title="UnicodePlot::DensityCanvas (class)">DensityCanvas</a></span>, <span class='object_link'><a href="UnicodePlot/DotCanvas.html" title="UnicodePlot::DotCanvas (class)">DotCanvas</a></span>, <span class='object_link'><a href="UnicodePlot/GridPlot.html" title="UnicodePlot::GridPlot (class)">GridPlot</a></span>, <span class='object_link'><a href="UnicodePlot/IOContext.html" title="UnicodePlot::IOContext (class)">IOContext</a></span>, <span class='object_link'><a href="UnicodePlot/Lineplot.html" title="UnicodePlot::Lineplot (class)">Lineplot</a></span>, <span class='object_link'><a href="UnicodePlot/LookupCanvas.html" title="UnicodePlot::LookupCanvas (class)">LookupCanvas</a></span>, <span class='object_link'><a href="UnicodePlot/NumericStemplot.html" title="UnicodePlot::NumericStemplot (class)">NumericStemplot</a></span>, <span class='object_link'><a href="UnicodePlot/Plot.html" title="UnicodePlot::Plot (class)">Plot</a></span>, <span class='object_link'><a href="UnicodePlot/Renderer.html" title="UnicodePlot::Renderer (class)">Renderer</a></span>, <span class='object_link'><a href="UnicodePlot/Scatterplot.html" title="UnicodePlot::Scatterplot (class)">Scatterplot</a></span>, <span class='object_link'><a href="UnicodePlot/Stemplot.html" title="UnicodePlot::Stemplot (class)">Stemplot</a></span>, <span class='object_link'><a href="UnicodePlot/StringStemplot.html" title="UnicodePlot::StringStemplot (class)">StringStemplot</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.0.5</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+        <dt id="BORDER_MAP-constant" class="">BORDER_MAP =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+  <span class='label'>solid:</span>   <span class='const'><span class='object_link'><a href="UnicodePlot/BorderMaps.html" title="UnicodePlot::BorderMaps (module)">BorderMaps</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="UnicodePlot/BorderMaps.html#BORDER_SOLID-constant" title="UnicodePlot::BorderMaps::BORDER_SOLID (constant)">BORDER_SOLID</a></span></span><span class='comma'>,</span>
+  <span class='label'>corners:</span> <span class='const'><span class='object_link'><a href="UnicodePlot/BorderMaps.html" title="UnicodePlot::BorderMaps (module)">BorderMaps</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="UnicodePlot/BorderMaps.html#BORDER_CORNERS-constant" title="UnicodePlot::BorderMaps::BORDER_CORNERS (constant)">BORDER_CORNERS</a></span></span><span class='comma'>,</span>
+  <span class='label'>barplot:</span> <span class='const'><span class='object_link'><a href="UnicodePlot/BorderMaps.html" title="UnicodePlot::BorderMaps (module)">BorderMaps</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="UnicodePlot/BorderMaps.html#BORDER_BARPLOT-constant" title="UnicodePlot::BorderMaps::BORDER_BARPLOT (constant)">BORDER_BARPLOT</a></span></span><span class='comma'>,</span>
+<span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#barplot-class_method" title="barplot (class method)">.<strong>barplot</strong>(*args, width: Plot::DEFAULT_WIDTH, color: Barplot::DEFAULT_COLOR, symbol: Barplot::DEFAULT_SYMBOL, border: :barplot, xscale: nil, xlabel: nil, data: nil, **kw)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#barplot!-class_method" title="barplot! (class method)">.<strong>barplot!</strong>(plot, *args, data: nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#border_types-class_method" title="border_types (class method)">.<strong>border_types</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#boxplot-class_method" title="boxplot (class method)">.<strong>boxplot</strong>(*args, data: nil, border: :corners, color: Boxplot::DEFAULT_COLOR, width: Plot::DEFAULT_WIDTH, xlim: [0, 0], **kw)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#boxplot!-class_method" title="boxplot! (class method)">.<strong>boxplot!</strong>(plot, *args, **kw)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#canvas_types-class_method" title="canvas_types (class method)">.<strong>canvas_types</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compute_stair_lines-class_method" title="compute_stair_lines (class method)">.<strong>compute_stair_lines</strong>(x, y, style: :post)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#densityplot-class_method" title="densityplot (class method)">.<strong>densityplot</strong>(x, y, color: :auto, grid: false, name: &quot;&quot;, **kw)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#densityplot!-class_method" title="densityplot! (class method)">.<strong>densityplot!</strong>(plot, x, y, **kw)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#histogram-class_method" title="histogram (class method)">.<strong>histogram</strong>(x, nbins: nil, closed: :left, symbol: &quot;▇&quot;, **kw)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lineplot-class_method" title="lineplot (class method)">.<strong>lineplot</strong>([x], y, name: &quot;&quot;, canvas: :braille, title: &quot;&quot;, xlabel: &quot;&quot;, ylabel: &quot;&quot;, labels: true, border: :solid, margin: Plot::DEFAULT_MARGIN, padding: Plot::DEFAULT_PADDING, color: :auto, width: Plot::DEFAULT_WIDTH, height: GridPlot::DEFAULT_HEIGHT, xlim: [0, 0], ylim: [0, 0], canvas: :braille, grid: true)  &#x21d2; Lineplot </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Draws a path through the given points on a new canvas.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lineplot!-class_method" title="lineplot! (class method)">.<strong>lineplot!</strong>(plot, [x], y, name: &quot;&quot;, color: :auto)  &#x21d2; Lineplot </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Draws a path through the given points on the given canvas.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scatterplot-class_method" title="scatterplot (class method)">.<strong>scatterplot</strong>(*args, canvas: :braille, color: :auto, name: &quot;&quot;, **kw)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scatterplot!-class_method" title="scatterplot! (class method)">.<strong>scatterplot!</strong>(plot, *args, color: :auto, name: &quot;&quot;)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stairs-class_method" title="stairs (class method)">.<strong>stairs</strong>(x, y, style: :post, name: &quot;&quot;, title: &quot;&quot;, xlabel: &quot;&quot;, ylabel: &quot;&quot;, labels: true, border: :solid, margin: 3, padding: 1, color: :auto, width: 40, height: 15, xlim: [0, 0], ylim: [0, 0], canvas: :braille, grid: true)  &#x21d2; Plot </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Draws a staircase plot on a new canvas.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stairs!-class_method" title="stairs! (class method)">.<strong>stairs!</strong>(plot, xvec, yvec, style: :post, **kw)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Similar to stairs, but takes an existing plot object as a first argument.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stemplot-class_method" title="stemplot (class method)">.<strong>stemplot</strong>(*args, scale: 10, **kw)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Generates one or more <span class='object_link'><a href="UnicodePlot/Stemplot.html" title="UnicodePlot::Stemplot (class)">Stemplot</a></span> objects from the input data and prints a Single or Double stemplot using <span class='object_link'><a href="#stemplot1!-class_method" title="UnicodePlot.stemplot1! (method)">UnicodePlot.stemplot1!</a></span> or <span class='object_link'><a href="#stemplot2!-class_method" title="UnicodePlot.stemplot2! (method)">UnicodePlot.stemplot2!</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stemplot1!-class_method" title="stemplot1! (class method)">.<strong>stemplot1!</strong>(plt, scale: 10, divider: &quot;|&quot;, padchar: &quot; &quot;, trim: false, **_kw)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Print a Single-Vector stemplot to STDOUT.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stemplot2!-class_method" title="stemplot2! (class method)">.<strong>stemplot2!</strong>(plt1, plt2, scale: 10, divider: &quot;|&quot;, padchar: &quot; &quot;, trim: false, **_kw)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Print a Back-to-Back Stemplot to STDOUT.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="barplot-class_method">
+  
+    
+      <span class="overload">.<strong>barplot</strong>(text, heights, xscale: nil, title: nil, xlabel: nil, ylabel: nil, labels: true, border: :barplot, margin: Plot::DEFAULT_MARGIN, padding: Plot::DEFAULT_PADDING, color: Barplot::DEFAULT_COLOR, width: Plot::DEFAULT_WIDTH, symbol: Barplot::DEFAULT_SYMBOL)  &#x21d2; <tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt> </span>
+    
+      <span class="overload">.<strong>barplot</strong>(data, **kwargs)  &#x21d2; <tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>barplot</strong>(text, heights, xscale: nil, title: nil, xlabel: nil, ylabel: nil, labels: true, border: :barplot, margin: Plot::DEFAULT_MARGIN, padding: Plot::DEFAULT_PADDING, color: Barplot::DEFAULT_COLOR, width: Plot::DEFAULT_WIDTH, symbol: Barplot::DEFAULT_SYMBOL)  &#x21d2; <tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    <p>Draws a horizontal barplot.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'><p>Example usage of barplot on IRB:</p>
+</div></p>
+      
+      <pre class="example code"><code>
+&gt;&gt; UnicodePlot.barplot([&quot;Paris&quot;, &quot;New York&quot;, &quot;Moskau&quot;, &quot;Madrid&quot;],
+                       [2.244, 8.406, 11.92, 3.165],
+                       xlabel: &quot;population [in mil]&quot;).render
+            ┌                                        ┐
+      Paris ┤■■■■■■ 2.244
+   New York ┤■■■■■■■■■■■■■■■■■■■■■■■ 8.406
+     Moskau ┤■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 11.92
+     Madrid ┤■■■■■■■■■ 3.165
+            └                                        ┘
+                       population [in mil]
+=&gt; nil</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>text</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The lables / captions of the bars.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>heights</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Numeric&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The values / heights of the bars.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>xscale</span>
+      
+      
+        <span class='type'>(<tt>nil</tt>, <tt>:log</tt>, <tt>:ln</tt>, <tt>:log10</tt>, <tt>:lg</tt>, <tt>:log2</tt>, <tt>:lb</tt>, <tt>callable</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>A function name symbol or callable object to transform the bar<br />
+length before plotting.  This effectively scales the x-axis<br />
+without influencing the captions of the individual bars.<br />
+e.g. use <code>xscale: :log10</code> for logscale.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>title</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>xlabel</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ylabel</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>labels</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>border</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>:barplot</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>margin</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>Plot::DEFAULT_MARGIN</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>padding</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>Plot::DEFAULT_PADDING</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>color</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>Barplot::DEFAULT_COLOR</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>width</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>Plot::DEFAULT_WIDTH</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>symbol</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>Barplot::DEFAULT_SYMBOL</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Specifies the character that should be used<br />
+to render the bars.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A plot object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="UnicodePlot/Plot.html" title="UnicodePlot::Plot (class)">Plot</a></span></li>
+    
+      <li><span class='object_link'><a href="#histogram-class_method" title="UnicodePlot.histogram (method)">histogram</a></span></li>
+    
+      <li><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></li>
+    
+  </ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>barplot</strong>(data, **kwargs)  &#x21d2; <tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    <p>The different variation of barplot described above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A hash in which the keys will be used as <code>text</code> and<br />
+the values will be utilized as <code>heights</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>kwargs</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Optional keyword arguments same as ones described above.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A plot object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/barplot.rb', line 123</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_barplot'>barplot</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span>
+                            <span class='label'>width:</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Plot.html" title="UnicodePlot::Plot (class)">Plot</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="UnicodePlot/Plot.html#DEFAULT_WIDTH-constant" title="UnicodePlot::Plot::DEFAULT_WIDTH (constant)">DEFAULT_WIDTH</a></span></span><span class='comma'>,</span>
+                            <span class='label'>color:</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="UnicodePlot/Barplot.html#DEFAULT_COLOR-constant" title="UnicodePlot::Barplot::DEFAULT_COLOR (constant)">DEFAULT_COLOR</a></span></span><span class='comma'>,</span>
+                            <span class='label'>symbol:</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="UnicodePlot/Barplot.html#DEFAULT_SYMBOL-constant" title="UnicodePlot::Barplot::DEFAULT_SYMBOL (constant)">DEFAULT_SYMBOL</a></span></span><span class='comma'>,</span>
+                            <span class='label'>border:</span> <span class='symbol'>:barplot</span><span class='comma'>,</span>
+                            <span class='label'>xscale:</span> <span class='kw'>nil</span><span class='comma'>,</span>
+                            <span class='label'>xlabel:</span> <span class='kw'>nil</span><span class='comma'>,</span>
+                            <span class='label'>data:</span> <span class='kw'>nil</span><span class='comma'>,</span>
+                            <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='kw'>when</span> <span class='int'>0</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_keys'>keys</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:to_s</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_heights'>heights</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span>
+  <span class='kw'>when</span> <span class='int'>2</span>
+    <span class='id identifier rubyid_keys'>keys</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_heights'>heights</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid arguments</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='id identifier rubyid_heights'>heights</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The given vectors must be of the same length</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_heights'>heights</span><span class='period'>.</span><span class='id identifier rubyid_min'>min</span> <span class='op'>&gt;=</span> <span class='int'>0</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>All values have to be positive. Negative bars are not supported.</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_xlabel'>xlabel</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/ValueTransformer.html" title="UnicodePlot::ValueTransformer (module)">ValueTransformer</a></span></span><span class='period'>.</span><span class='id identifier rubyid_transform_name'><span class='object_link'><a href="UnicodePlot/ValueTransformer.html#transform_name-class_method" title="UnicodePlot::ValueTransformer.transform_name (method)">transform_name</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_xscale'>xscale</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_plot'>plot</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="UnicodePlot/Barplot.html#initialize-instance_method" title="UnicodePlot::Barplot#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_heights'>heights</span><span class='comma'>,</span> <span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_color'>color</span><span class='comma'>,</span> <span class='id identifier rubyid_symbol'>symbol</span><span class='comma'>,</span> <span class='id identifier rubyid_xscale'>xscale</span><span class='comma'>,</span>
+                     <span class='label'>border:</span> <span class='id identifier rubyid_border'>border</span><span class='comma'>,</span> <span class='label'>xlabel:</span> <span class='id identifier rubyid_xlabel'>xlabel</span><span class='comma'>,</span>
+                     <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate_row!'>annotate_row!</span><span class='lparen'>(</span><span class='symbol'>:l</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_plot'>plot</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="barplot!-class_method">
+  
+    
+      <span class="overload">.<strong>barplot!</strong>(plot, text, heights)  &#x21d2; <tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt> </span>
+    
+      <span class="overload">.<strong>barplot!</strong>(plot, data)  &#x21d2; <tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>barplot!</strong>(plot, text, heights)  &#x21d2; <tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    <p>Draw additional bars on the given existing plot.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>plot</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the existing plot.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A plot object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#barplot-class_method" title="UnicodePlot.barplot (method)">barplot</a></span></li>
+    
+  </ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>barplot!</strong>(plot, data)  &#x21d2; <tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    <p>The different variation of <code>barplot!</code> that takes the plotting data in a hash.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>plot</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the existing plot.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Barplot.html" title="UnicodePlot::Barplot (class)">Barplot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A plot object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/barplot.rb', line 177</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_barplot!'>barplot!</span><span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='comma'>,</span>
+                             <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span>
+                             <span class='label'>data:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='kw'>when</span> <span class='int'>0</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_keys'>keys</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:to_s</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_heights'>heights</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span>
+  <span class='kw'>when</span> <span class='int'>2</span>
+    <span class='id identifier rubyid_keys'>keys</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_heights'>heights</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid arguments</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='id identifier rubyid_heights'>heights</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The given vectors must be of the same length</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Can&#39;t append empty array to barplot</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_cur_idx'>cur_idx</span> <span class='op'>=</span> <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_n_rows'>n_rows</span>
+  <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_add_row!'>add_row!</span><span class='lparen'>(</span><span class='id identifier rubyid_heights'>heights</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate_row!'>annotate_row!</span><span class='lparen'>(</span><span class='symbol'>:l</span><span class='comma'>,</span> <span class='id identifier rubyid_cur_idx'>cur_idx</span> <span class='op'>+</span> <span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_plot'>plot</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="border_types-class_method">
+  
+    .<strong>border_types</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/renderer.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_border_types'>border_types</span>
+  <span class='const'><span class='object_link'><a href="#BORDER_MAP-constant" title="UnicodePlot::BORDER_MAP (constant)">BORDER_MAP</a></span></span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="boxplot-class_method">
+  
+    .<strong>boxplot</strong>(*args, data: nil, border: :corners, color: Boxplot::DEFAULT_COLOR, width: Plot::DEFAULT_WIDTH, xlim: [0, 0], **kw)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/boxplot.rb', line 94</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_boxplot'>boxplot</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span>
+                            <span class='label'>data:</span> <span class='kw'>nil</span><span class='comma'>,</span>
+                            <span class='label'>border:</span> <span class='symbol'>:corners</span><span class='comma'>,</span>
+                            <span class='label'>color:</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Boxplot.html" title="UnicodePlot::Boxplot (class)">Boxplot</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="UnicodePlot/Boxplot.html#DEFAULT_COLOR-constant" title="UnicodePlot::Boxplot::DEFAULT_COLOR (constant)">DEFAULT_COLOR</a></span></span><span class='comma'>,</span>
+                            <span class='label'>width:</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Plot.html" title="UnicodePlot::Plot (class)">Plot</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="UnicodePlot/Plot.html#DEFAULT_WIDTH-constant" title="UnicodePlot::Plot::DEFAULT_WIDTH (constant)">DEFAULT_WIDTH</a></span></span><span class='comma'>,</span>
+                            <span class='label'>xlim:</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span>
+                            <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='kw'>when</span> <span class='int'>0</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_text'>text</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span>
+  <span class='kw'>when</span> <span class='int'>1</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+  <span class='kw'>when</span> <span class='int'>2</span>
+    <span class='id identifier rubyid_text'>text</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wrong number of arguments</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>case</span> <span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+  <span class='kw'>when</span> <span class='const'>Numeric</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_data'>data</span><span class='rbracket'>]</span>
+  <span class='kw'>when</span> <span class='const'>Array</span>
+    <span class='comment'># do nothing
+</span>  <span class='kw'>else</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_to_ary'>to_ary</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_text'>text</span> <span class='op'>||=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wrong number of text</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_xlim'>xlim</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>2</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>xlim must be a length 2 array</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_min_x'>min_x</span><span class='comma'>,</span> <span class='id identifier rubyid_max_x'>max_x</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Utils.html" title="UnicodePlot::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extend_limits'><span class='object_link'><a href="UnicodePlot/Utils.html#extend_limits-class_method" title="UnicodePlot::Utils.extend_limits (method)">extend_limits</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:minmax</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='comma'>,</span> <span class='id identifier rubyid_xlim'>xlim</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Boxplot.html" title="UnicodePlot::Boxplot (class)">Boxplot</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="UnicodePlot/Boxplot.html#MIN_WIDTH-constant" title="UnicodePlot::Boxplot::MIN_WIDTH (constant)">MIN_WIDTH</a></span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+
+  <span class='id identifier rubyid_plot'>plot</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Boxplot.html" title="UnicodePlot::Boxplot (class)">Boxplot</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="UnicodePlot/Boxplot.html#initialize-instance_method" title="UnicodePlot::Boxplot#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_color'>color</span><span class='comma'>,</span> <span class='id identifier rubyid_min_x'>min_x</span><span class='comma'>,</span> <span class='id identifier rubyid_max_x'>max_x</span><span class='comma'>,</span>
+                     <span class='label'>border:</span> <span class='id identifier rubyid_border'>border</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='lparen'>(</span><span class='int'>1</span> <span class='op'>...</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_add_series!'>add_series!</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_mean_x'>mean_x</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_min_x'>min_x</span> <span class='op'>+</span> <span class='id identifier rubyid_max_x'>max_x</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='float'>2.0</span>
+  <span class='id identifier rubyid_min_x_str'>min_x_str</span>  <span class='op'>=</span> <span class='lparen'>(</span><span class='const'><span class='object_link'><a href="UnicodePlot/Utils.html" title="UnicodePlot::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_roundable?'><span class='object_link'><a href="UnicodePlot/Utils.html#roundable%3F-class_method" title="UnicodePlot::Utils.roundable? (method)">roundable?</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_min_x'>min_x</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_min_x'>min_x</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span> <span class='op'>:</span> <span class='id identifier rubyid_min_x'>min_x</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='id identifier rubyid_mean_x_str'>mean_x_str</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='const'><span class='object_link'><a href="UnicodePlot/Utils.html" title="UnicodePlot::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_roundable?'><span class='object_link'><a href="UnicodePlot/Utils.html#roundable%3F-class_method" title="UnicodePlot::Utils.roundable? (method)">roundable?</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_mean_x'>mean_x</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_mean_x'>mean_x</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span> <span class='op'>:</span> <span class='id identifier rubyid_mean_x'>mean_x</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='id identifier rubyid_max_x_str'>max_x_str</span>  <span class='op'>=</span> <span class='lparen'>(</span><span class='const'><span class='object_link'><a href="UnicodePlot/Utils.html" title="UnicodePlot::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_roundable?'><span class='object_link'><a href="UnicodePlot/Utils.html#roundable%3F-class_method" title="UnicodePlot::Utils.roundable? (method)">roundable?</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_max_x'>max_x</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_max_x'>max_x</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span> <span class='op'>:</span> <span class='id identifier rubyid_max_x'>max_x</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate!'>annotate!</span><span class='lparen'>(</span><span class='symbol'>:bl</span><span class='comma'>,</span> <span class='id identifier rubyid_min_x_str'>min_x_str</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='symbol'>:light_black</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate!'>annotate!</span><span class='lparen'>(</span><span class='symbol'>:b</span><span class='comma'>,</span>  <span class='id identifier rubyid_mean_x_str'>mean_x_str</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='symbol'>:light_black</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate!'>annotate!</span><span class='lparen'>(</span><span class='symbol'>:br</span><span class='comma'>,</span> <span class='id identifier rubyid_max_x_str'>max_x_str</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='symbol'>:light_black</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate_row!'>annotate_row!</span><span class='lparen'>(</span><span class='symbol'>:l</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span><span class='op'>*</span><span class='int'>3</span><span class='op'>+</span><span class='int'>1</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_plot'>plot</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="boxplot!-class_method">
+  
+    .<strong>boxplot!</strong>(plot, *args, **kw)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/boxplot.rb', line 157</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_boxplot!'>boxplot!</span><span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='kw'>when</span> <span class='int'>1</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_kw'>kw</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>when</span> <span class='int'>2</span>
+    <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>worng number of arguments</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Can&#39;t append empty array to boxplot</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_add_series!'>add_series!</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate_row!'>annotate_row!</span><span class='lparen'>(</span><span class='symbol'>:l</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_n_data'>n_data</span> <span class='op'>-</span> <span class='int'>1</span><span class='rparen'>)</span><span class='op'>*</span><span class='int'>3</span><span class='op'>+</span><span class='int'>1</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_min_x'>min_x</span> <span class='op'>=</span> <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_min_x'>min_x</span>
+  <span class='id identifier rubyid_max_x'>max_x</span> <span class='op'>=</span> <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_max_x'>max_x</span>
+  <span class='id identifier rubyid_mean_x'>mean_x</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_min_x'>min_x</span> <span class='op'>+</span> <span class='id identifier rubyid_max_x'>max_x</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='float'>2.0</span>
+  <span class='id identifier rubyid_min_x_str'>min_x_str</span>  <span class='op'>=</span> <span class='lparen'>(</span><span class='const'><span class='object_link'><a href="UnicodePlot/Utils.html" title="UnicodePlot::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_roundable?'><span class='object_link'><a href="UnicodePlot/Utils.html#roundable%3F-class_method" title="UnicodePlot::Utils.roundable? (method)">roundable?</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_min_x'>min_x</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_min_x'>min_x</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span> <span class='op'>:</span> <span class='id identifier rubyid_min_x'>min_x</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='id identifier rubyid_mean_x_str'>mean_x_str</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='const'><span class='object_link'><a href="UnicodePlot/Utils.html" title="UnicodePlot::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_roundable?'><span class='object_link'><a href="UnicodePlot/Utils.html#roundable%3F-class_method" title="UnicodePlot::Utils.roundable? (method)">roundable?</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_mean_x'>mean_x</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_mean_x'>mean_x</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span> <span class='op'>:</span> <span class='id identifier rubyid_mean_x'>mean_x</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='id identifier rubyid_max_x_str'>max_x_str</span>  <span class='op'>=</span> <span class='lparen'>(</span><span class='const'><span class='object_link'><a href="UnicodePlot/Utils.html" title="UnicodePlot::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_roundable?'><span class='object_link'><a href="UnicodePlot/Utils.html#roundable%3F-class_method" title="UnicodePlot::Utils.roundable? (method)">roundable?</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_max_x'>max_x</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_max_x'>max_x</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span> <span class='op'>:</span> <span class='id identifier rubyid_max_x'>max_x</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate!'>annotate!</span><span class='lparen'>(</span><span class='symbol'>:bl</span><span class='comma'>,</span> <span class='id identifier rubyid_min_x_str'>min_x_str</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='symbol'>:light_black</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate!'>annotate!</span><span class='lparen'>(</span><span class='symbol'>:b</span><span class='comma'>,</span>  <span class='id identifier rubyid_mean_x_str'>mean_x_str</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='symbol'>:light_black</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate!'>annotate!</span><span class='lparen'>(</span><span class='symbol'>:br</span><span class='comma'>,</span> <span class='id identifier rubyid_max_x_str'>max_x_str</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='symbol'>:light_black</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_plot'>plot</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="canvas_types-class_method">
+  
+    .<strong>canvas_types</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+167
+168
+169</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/canvas.rb', line 167</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_canvas_types'>canvas_types</span>
+  <span class='const'><span class='object_link'><a href="UnicodePlot/Canvas.html" title="UnicodePlot::Canvas (class)">Canvas</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="UnicodePlot/Canvas.html#CANVAS_CLASS_MAP-constant" title="UnicodePlot::Canvas::CANVAS_CLASS_MAP (constant)">CANVAS_CLASS_MAP</a></span></span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compute_stair_lines-class_method">
+  
+    .<strong>compute_stair_lines</strong>(x, y, style: :post)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/stairs.rb', line 63</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_compute_stair_lines'>compute_stair_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='label'>style:</span> <span class='symbol'>:post</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_x_vex'>x_vex</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>*</span> <span class='int'>2</span> <span class='op'>-</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_y_vex'>y_vex</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>*</span> <span class='int'>2</span> <span class='op'>-</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_x_vex'>x_vex</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y_vex'>y_vex</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_y'>y</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_o'>o</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_style'>style</span> <span class='op'>==</span> <span class='symbol'>:post</span>
+    <span class='lparen'>(</span><span class='int'>1</span> <span class='op'>...</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+      <span class='id identifier rubyid_x_vex'>x_vex</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_o'>o</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_x_vex'>x_vex</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_o'>o</span> <span class='op'>+</span> <span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_y_vex'>y_vex</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_o'>o</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_y'>y</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_y_vex'>y_vex</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_o'>o</span> <span class='op'>+</span> <span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_y'>y</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_o'>o</span> <span class='op'>+=</span> <span class='int'>1</span>
+    <span class='kw'>end</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_style'>style</span> <span class='op'>==</span> <span class='symbol'>:pre</span>
+    <span class='lparen'>(</span><span class='int'>1</span> <span class='op'>...</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+      <span class='id identifier rubyid_x_vex'>x_vex</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_o'>o</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_x_vex'>x_vex</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_o'>o</span> <span class='op'>+</span> <span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_y_vex'>y_vex</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_o'>o</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_y'>y</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_y_vex'>y_vex</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_o'>o</span> <span class='op'>+</span> <span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_y'>y</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_o'>o</span> <span class='op'>+=</span> <span class='int'>1</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x_vex'>x_vex</span><span class='comma'>,</span> <span class='id identifier rubyid_y_vex'>y_vex</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="densityplot-class_method">
+  
+    .<strong>densityplot</strong>(x, y, color: :auto, grid: false, name: &quot;&quot;, **kw)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2
+3
+4
+5</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/densityplot.rb', line 2</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_densityplot'>densityplot</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='symbol'>:auto</span><span class='comma'>,</span> <span class='label'>grid:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_plot'>plot</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/GridPlot.html" title="UnicodePlot::GridPlot (class)">GridPlot</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="UnicodePlot/GridPlot.html#initialize-instance_method" title="UnicodePlot::GridPlot#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='symbol'>:density</span><span class='comma'>,</span> <span class='label'>grid:</span> <span class='id identifier rubyid_grid'>grid</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_scatterplot!'>scatterplot!</span><span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='id identifier rubyid_color'>color</span><span class='comma'>,</span> <span class='label'>name:</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="densityplot!-class_method">
+  
+    .<strong>densityplot!</strong>(plot, x, y, **kw)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/densityplot.rb', line 7</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_densityplot!'>densityplot!</span><span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_scatterplot!'>scatterplot!</span><span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="histogram-class_method">
+  
+    .<strong>histogram</strong>(x, nbins: nil, closed: :left, symbol: &quot;▇&quot;, **kw)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/histogram.rb', line 4</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_histogram'>histogram</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span>
+                              <span class='label'>nbins:</span> <span class='kw'>nil</span><span class='comma'>,</span>
+                              <span class='label'>closed:</span> <span class='symbol'>:left</span><span class='comma'>,</span>
+                              <span class='label'>symbol:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>▇</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                              <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_hist'>hist</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_histogram'>histogram</span><span class='lparen'>(</span><span class='op'>*</span><span class='lbracket'>[</span><span class='id identifier rubyid_nbins'>nbins</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_compact'>compact</span><span class='comma'>,</span> <span class='label'>closed:</span> <span class='id identifier rubyid_closed'>closed</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_edge'>edge</span><span class='comma'>,</span> <span class='id identifier rubyid_counts'>counts</span> <span class='op'>=</span> <span class='id identifier rubyid_hist'>hist</span><span class='period'>.</span><span class='id identifier rubyid_edge'>edge</span><span class='comma'>,</span> <span class='id identifier rubyid_hist'>hist</span><span class='period'>.</span><span class='id identifier rubyid_weights'>weights</span>
+  <span class='id identifier rubyid_labels'>labels</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_bin_width'>bin_width</span> <span class='op'>=</span> <span class='id identifier rubyid_edge'>edge</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>-</span> <span class='id identifier rubyid_edge'>edge</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_pad_left'>pad_left</span><span class='comma'>,</span> <span class='id identifier rubyid_pad_right'>pad_right</span> <span class='op'>=</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span>
+  <span class='lparen'>(</span><span class='int'>0</span> <span class='op'>...</span> <span class='id identifier rubyid_edge'>edge</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_val1'>val1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Utils.html" title="UnicodePlot::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_float_round_log10'><span class='object_link'><a href="UnicodePlot/Utils.html#float_round_log10-class_method" title="UnicodePlot::Utils.float_round_log10 (method)">float_round_log10</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_edge'>edge</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_bin_width'>bin_width</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_val2'>val2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Utils.html" title="UnicodePlot::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_float_round_log10'><span class='object_link'><a href="UnicodePlot/Utils.html#float_round_log10-class_method" title="UnicodePlot::Utils.float_round_log10 (method)">float_round_log10</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_val1'>val1</span> <span class='op'>+</span> <span class='id identifier rubyid_bin_width'>bin_width</span><span class='comma'>,</span> <span class='id identifier rubyid_bin_width'>bin_width</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_a1'>a1</span> <span class='op'>=</span> <span class='id identifier rubyid_val1'>val1</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:length</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_a2'>a2</span> <span class='op'>=</span> <span class='id identifier rubyid_val2'>val2</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:length</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_pad_left'>pad_left</span>  <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_pad_left'>pad_left</span><span class='comma'>,</span>  <span class='id identifier rubyid_a1'>a1</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_a2'>a2</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+    <span class='id identifier rubyid_pad_right'>pad_right</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_pad_right'>pad_right</span><span class='comma'>,</span> <span class='id identifier rubyid_a1'>a1</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_a2'>a2</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_l_str'>l_str</span> <span class='op'>=</span> <span class='id identifier rubyid_hist'>hist</span><span class='period'>.</span><span class='id identifier rubyid_closed'>closed</span> <span class='op'>==</span> <span class='symbol'>:right</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>(</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_r_str'>r_str</span> <span class='op'>=</span> <span class='id identifier rubyid_hist'>hist</span><span class='period'>.</span><span class='id identifier rubyid_closed'>closed</span> <span class='op'>==</span> <span class='symbol'>:right</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>]</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_counts'>counts</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_n'>n</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_val1'>val1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Utils.html" title="UnicodePlot::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_float_round_log10'><span class='object_link'><a href="UnicodePlot/Utils.html#float_round_log10-class_method" title="UnicodePlot::Utils.float_round_log10 (method)">float_round_log10</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_edge'>edge</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_bin_width'>bin_width</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_val2'>val2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Utils.html" title="UnicodePlot::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_float_round_log10'><span class='object_link'><a href="UnicodePlot/Utils.html#float_round_log10-class_method" title="UnicodePlot::Utils.float_round_log10 (method)">float_round_log10</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_val1'>val1</span> <span class='op'>+</span> <span class='id identifier rubyid_bin_width'>bin_width</span><span class='comma'>,</span> <span class='id identifier rubyid_bin_width'>bin_width</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_a1'>a1</span> <span class='op'>=</span> <span class='id identifier rubyid_val1'>val1</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:length</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_a2'>a2</span> <span class='op'>=</span> <span class='id identifier rubyid_val2'>val2</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:length</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\e[90m</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_l_str'>l_str</span><span class='embexpr_end'>}</span><span class='tstring_content'>\e[0m</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+                <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_pad_left'>pad_left</span> <span class='op'>-</span> <span class='id identifier rubyid_a1'>a1</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>+</span>
+                <span class='id identifier rubyid_val1'>val1</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span>
+                <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_pad_right'>pad_right</span> <span class='op'>-</span> <span class='id identifier rubyid_a1'>a1</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>+</span>
+                <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\e[90m, \e[0m</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+                <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_pad_left'>pad_left</span> <span class='op'>-</span> <span class='id identifier rubyid_a2'>a2</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>+</span>
+                <span class='id identifier rubyid_val2'>val2</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span>
+                <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_pad_right'>pad_right</span> <span class='op'>-</span> <span class='id identifier rubyid_a2'>a2</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>+</span>
+                <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\e[90m</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_r_str'>r_str</span><span class='embexpr_end'>}</span><span class='tstring_content'>\e[0m</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_xscale'>xscale</span> <span class='op'>=</span> <span class='id identifier rubyid_kw'>kw</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:xscale</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_xlabel'>xlabel</span> <span class='op'>=</span> <span class='id identifier rubyid_kw'>kw</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:xlabel</span><span class='rparen'>)</span> <span class='op'>||</span>
+           <span class='const'><span class='object_link'><a href="UnicodePlot/ValueTransformer.html" title="UnicodePlot::ValueTransformer (module)">ValueTransformer</a></span></span><span class='period'>.</span><span class='id identifier rubyid_transform_name'><span class='object_link'><a href="UnicodePlot/ValueTransformer.html#transform_name-class_method" title="UnicodePlot::ValueTransformer.transform_name (method)">transform_name</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_xscale'>xscale</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Frequency</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_barplot'>barplot</span><span class='lparen'>(</span><span class='id identifier rubyid_labels'>labels</span><span class='comma'>,</span> <span class='id identifier rubyid_counts'>counts</span><span class='comma'>,</span>
+          <span class='label'>symbol:</span> <span class='id identifier rubyid_symbol'>symbol</span><span class='comma'>,</span>
+          <span class='label'>xscale:</span> <span class='id identifier rubyid_xscale'>xscale</span><span class='comma'>,</span>
+          <span class='label'>xlabel:</span> <span class='id identifier rubyid_xlabel'>xlabel</span><span class='comma'>,</span>
+          <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lineplot-class_method">
+  
+    .<strong>lineplot</strong>([x], y, name: &quot;&quot;, canvas: :braille, title: &quot;&quot;, xlabel: &quot;&quot;, ylabel: &quot;&quot;, labels: true, border: :solid, margin: Plot::DEFAULT_MARGIN, padding: Plot::DEFAULT_PADDING, color: :auto, width: Plot::DEFAULT_WIDTH, height: GridPlot::DEFAULT_HEIGHT, xlim: [0, 0], ylim: [0, 0], canvas: :braille, grid: true)  &#x21d2; <tt><span class='object_link'><a href="UnicodePlot/Lineplot.html" title="UnicodePlot::Lineplot (class)">Lineplot</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    <p>Draws a path through the given points on a new canvas.</p>
+
+<p>The first (optional) array <code>x</code> should contain the horizontal positions for all the points along the path.<br />
+The second array <code>y</code> should then contain the corresponding vertical positions respectively.<br />
+This means that the two vectors must be of the same length and ordering.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Numeric&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Optional. The horizontal position for each point. If omitted, the axes of <code>y</code> will be used as <code>x</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Numeric&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The vertical position for each point.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Annotation of the current drawing to be displayed on the right.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>title</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>xlabel</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ylabel</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>labels</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>border</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>:solid</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>margin</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>Plot::DEFAULT_MARGIN</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>padding</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>Plot::DEFAULT_PADDING</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>color</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>:auto</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>width</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>Plot::DEFAULT_WIDTH</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>height</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>GridPlot::DEFAULT_HEIGHT</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>xlim</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>[0, 0]</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ylim</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>[0, 0]</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>canvas</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>:braille</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>The type of canvas that should be used for drawing.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>grid</span>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>If <code>true</code>, draws grid-lines at the origin.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Lineplot.html" title="UnicodePlot::Lineplot (class)">Lineplot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A plot object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/lineplot.rb', line 33</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_lineplot'>lineplot</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span>
+                             <span class='label'>canvas:</span> <span class='symbol'>:braille</span><span class='comma'>,</span>
+                             <span class='label'>color:</span> <span class='symbol'>:auto</span><span class='comma'>,</span>
+                             <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                             <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='kw'>when</span> <span class='int'>1</span>
+    <span class='comment'># y only
+</span>    <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='int'>1</span> <span class='op'>..</span> <span class='id identifier rubyid_y'>y</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='int'>2</span>
+    <span class='comment'># x and y
+</span>    <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wrong number of arguments</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>case</span> <span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+  <span class='kw'>when</span> <span class='const'>Time</span><span class='comma'>,</span> <span class='const'>Date</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Time</span>
+      <span class='id identifier rubyid_d'>d</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:to_f</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_origin'>origin</span> <span class='op'>=</span> <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_d'>d</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_xi'>xi</span><span class='op'>|</span> <span class='id identifier rubyid_xi'>xi</span> <span class='op'>-</span> <span class='id identifier rubyid_origin'>origin</span> <span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_plot'>plot</span> <span class='op'>=</span> <span class='id identifier rubyid_lineplot'>lineplot</span><span class='lparen'>(</span><span class='id identifier rubyid_d'>d</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='label'>canvas:</span> <span class='id identifier rubyid_canvas'>canvas</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='id identifier rubyid_color'>color</span><span class='comma'>,</span> <span class='label'>name:</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_xmin'>xmin</span><span class='comma'>,</span> <span class='id identifier rubyid_xmax'>xmax</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_minmax'>minmax</span>
+    <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate!'>annotate!</span><span class='lparen'>(</span><span class='symbol'>:bl</span><span class='comma'>,</span> <span class='id identifier rubyid_xmin'>xmin</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='symbol'>:light_black</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate!'>annotate!</span><span class='lparen'>(</span><span class='symbol'>:br</span><span class='comma'>,</span> <span class='id identifier rubyid_xmax'>xmax</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='symbol'>:light_black</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_plot'>plot</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_plot'>plot</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Lineplot.html" title="UnicodePlot::Lineplot (class)">Lineplot</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="UnicodePlot/GridPlot.html#initialize-instance_method" title="UnicodePlot::GridPlot#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_canvas'>canvas</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_lineplot!'>lineplot!</span><span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='id identifier rubyid_color'>color</span><span class='comma'>,</span> <span class='label'>name:</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lineplot!-class_method">
+  
+    .<strong>lineplot!</strong>(plot, [x], y, name: &quot;&quot;, color: :auto)  &#x21d2; <tt><span class='object_link'><a href="UnicodePlot/Lineplot.html" title="UnicodePlot::Lineplot (class)">Lineplot</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    <p>Draws a path through the given points on the given canvas.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>plot</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Lineplot.html" title="UnicodePlot::Lineplot (class)">Lineplot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The plot object.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Numeric&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Optional. The horizontal position for each point. If omitted, the axes of <code>y</code> will be used as <code>x</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Numeric&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The vertical position for each point.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Annotation of the current drawing to be displayed on the right.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>color</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>:auto</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Lineplot.html" title="UnicodePlot::Lineplot (class)">Lineplot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The plot object same as the <code>plot</code> parameter.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/lineplot.rb', line 80</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_lineplot!'>lineplot!</span><span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='comma'>,</span>
+                              <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span>
+                              <span class='label'>color:</span> <span class='symbol'>:auto</span><span class='comma'>,</span>
+                              <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='kw'>when</span> <span class='int'>1</span>
+    <span class='comment'># y only
+</span>    <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='int'>1</span> <span class='op'>..</span> <span class='id identifier rubyid_y'>y</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='int'>2</span>
+    <span class='comment'># x and y
+</span>    <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_y'>y</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
+      <span class='comment'># intercept and slope
+</span>      <span class='id identifier rubyid_intercept'>intercept</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_slope'>slope</span> <span class='op'>=</span> <span class='id identifier rubyid_y'>y</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_xmin'>xmin</span> <span class='op'>=</span> <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_origin_x'>origin_x</span>
+      <span class='id identifier rubyid_xmax'>xmax</span> <span class='op'>=</span> <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_origin_x'>origin_x</span> <span class='op'>+</span> <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_plot_width'>plot_width</span>
+      <span class='id identifier rubyid_ymin'>ymin</span> <span class='op'>=</span> <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_origin_y'>origin_y</span>
+      <span class='id identifier rubyid_ymax'>ymax</span> <span class='op'>=</span> <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_origin_y'>origin_y</span> <span class='op'>+</span> <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_plot_height'>plot_height</span>
+      <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_xmin'>xmin</span><span class='comma'>,</span> <span class='id identifier rubyid_xmax'>xmax</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_intercept'>intercept</span> <span class='op'>+</span> <span class='id identifier rubyid_xmin'>xmin</span><span class='op'>*</span><span class='id identifier rubyid_slope'>slope</span><span class='comma'>,</span> <span class='id identifier rubyid_intercept'>intercept</span> <span class='op'>+</span> <span class='id identifier rubyid_xmax'>xmax</span><span class='op'>*</span><span class='id identifier rubyid_slope'>slope</span><span class='rbracket'>]</span>
+    <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wrong number of arguments</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>case</span> <span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+  <span class='kw'>when</span> <span class='const'>Time</span><span class='comma'>,</span> <span class='const'>Date</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_x'>x</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Time</span>
+      <span class='id identifier rubyid_d'>d</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:to_f</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_origin'>origin</span> <span class='op'>=</span> <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_d'>d</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_xi'>xi</span><span class='op'>|</span> <span class='id identifier rubyid_xi'>xi</span> <span class='op'>-</span> <span class='id identifier rubyid_origin'>origin</span> <span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_lineplot!'>lineplot!</span><span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='comma'>,</span> <span class='id identifier rubyid_d'>d</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='id identifier rubyid_color'>color</span><span class='comma'>,</span> <span class='label'>name:</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span> <span class='op'>==</span> <span class='symbol'>:auto</span> <span class='op'>?</span> <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_next_color'>next_color</span> <span class='op'>:</span> <span class='id identifier rubyid_color'>color</span>
+    <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate!'>annotate!</span><span class='lparen'>(</span><span class='symbol'>:r</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='id identifier rubyid_color'>color</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_lines!'>lines!</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_color'>color</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_plot'>plot</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="scatterplot-class_method">
+  
+    .<strong>scatterplot</strong>(*args, canvas: :braille, color: :auto, name: &quot;&quot;, **kw)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/scatterplot.rb', line 5</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_scatterplot'>scatterplot</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span>
+                                <span class='label'>canvas:</span> <span class='symbol'>:braille</span><span class='comma'>,</span>
+                                <span class='label'>color:</span> <span class='symbol'>:auto</span><span class='comma'>,</span>
+                                <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                                <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='kw'>when</span> <span class='int'>1</span>
+    <span class='comment'># y only
+</span>    <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='int'>1</span> <span class='op'>..</span> <span class='id identifier rubyid_y'>y</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='int'>2</span>
+    <span class='comment'># x and y
+</span>    <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>worng number of arguments</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_plot'>plot</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Scatterplot.html" title="UnicodePlot::Scatterplot (class)">Scatterplot</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="UnicodePlot/GridPlot.html#initialize-instance_method" title="UnicodePlot::GridPlot#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_canvas'>canvas</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_scatterplot!'>scatterplot!</span><span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='id identifier rubyid_color'>color</span><span class='comma'>,</span> <span class='label'>name:</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="scatterplot!-class_method">
+  
+    .<strong>scatterplot!</strong>(plot, *args, color: :auto, name: &quot;&quot;)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/scatterplot.rb', line 27</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_scatterplot!'>scatterplot!</span><span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='comma'>,</span>
+                                 <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span>
+                                 <span class='label'>color:</span> <span class='symbol'>:auto</span><span class='comma'>,</span>
+                                 <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='kw'>when</span> <span class='int'>1</span>
+    <span class='comment'># y only
+</span>    <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='int'>1</span> <span class='op'>..</span> <span class='id identifier rubyid_y'>y</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='int'>2</span>
+    <span class='comment'># x and y
+</span>    <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>worng number of arguments</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span> <span class='op'>==</span> <span class='symbol'>:auto</span> <span class='op'>?</span> <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_next_color'>next_color</span> <span class='op'>:</span> <span class='id identifier rubyid_color'>color</span>
+  <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_annotate!'>annotate!</span><span class='lparen'>(</span><span class='symbol'>:r</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='id identifier rubyid_color'>color</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_plot'>plot</span><span class='period'>.</span><span class='id identifier rubyid_points!'>points!</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_color'>color</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_plot'>plot</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stairs-class_method">
+  
+    .<strong>stairs</strong>(x, y, style: :post, name: &quot;&quot;, title: &quot;&quot;, xlabel: &quot;&quot;, ylabel: &quot;&quot;, labels: true, border: :solid, margin: 3, padding: 1, color: :auto, width: 40, height: 15, xlim: [0, 0], ylim: [0, 0], canvas: :braille, grid: true)  &#x21d2; <tt><span class='object_link'><a href="UnicodePlot/Plot.html" title="UnicodePlot::Plot (class)">Plot</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    <p>Draws a staircase plot on a new canvas.</p>
+
+<p>The first vector <code>x</code> should contain the horizontal<br />
+positions for all the points. The second vector <code>y</code> should then<br />
+contain the corresponding vertical positions respectively. This<br />
+means that the two vectors must be of the same length and<br />
+ordering.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'><p>Example usage of stairs on IRB:</p>
+</div></p>
+      
+      <pre class="example code"><code>
+&gt;&gt; UnicodePlot.stairs([1, 2, 4, 7, 8], [1, 3, 4, 2, 7], style: :post, title: &quot;My Staircase Plot&quot;).render
+                 My Staircase Plot
+     ┌────────────────────────────────────────┐
+   7 │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸│
+     │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸│
+     │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸│
+     │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸│
+     │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸│
+     │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸│
+     │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸│
+     │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⡄⠀⠀⠀⠀⢸│
+     │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⢸│
+     │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⢸│
+     │⠀⠀⠀⠀⠀⢸⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⢸│
+     │⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⢸│
+     │⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠧⠤⠤⠤⠤⠼│
+     │⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
+   1 │⣀⣀⣀⣀⣀⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
+     └────────────────────────────────────────┘
+     1                                        8
+=&gt; nil</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Numeric&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The horizontal position for each point.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Numeric&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The vertical position for each point.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>style</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>:post</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Specifies where the transition of the stair takes place. Can be either <code>:pre</code> or <code>:post</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Annotation of the current drawing to be displayed on the right.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>height</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>15</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Number of character rows that should be used for plotting.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>xlim</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Numeric&gt;</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>[0, 0]</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Plotting range for the x axis. <code>[0, 0]</code> stands for automatic.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ylim</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Numeric&gt;</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>[0, 0]</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Plotting range for the y axis. <code>[0, 0]</code> stands for automatic.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>canvas</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>:braille</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>The type of canvas that should be used for drawing.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>grid</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>If <code>true</code>, draws grid-lines at the origin.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Plot.html" title="UnicodePlot::Plot (class)">Plot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A plot object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="UnicodePlot/Plot.html" title="UnicodePlot::Plot (class)">Plot</a></span></li>
+    
+      <li><span class='object_link'><a href="#scatterplot-class_method" title="UnicodePlot.scatterplot (method)">scatterplot</a></span></li>
+    
+      <li><span class='object_link'><a href="#lineplot-class_method" title="UnicodePlot.lineplot (method)">lineplot</a></span></li>
+    
+  </ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/stairs.rb', line 52</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_stairs'>stairs</span><span class='lparen'>(</span><span class='id identifier rubyid_xvec'>xvec</span><span class='comma'>,</span> <span class='id identifier rubyid_yvec'>yvec</span><span class='comma'>,</span> <span class='label'>style:</span> <span class='symbol'>:post</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_x_vex'>x_vex</span><span class='comma'>,</span> <span class='id identifier rubyid_y_vex'>y_vex</span> <span class='op'>=</span> <span class='id identifier rubyid_compute_stair_lines'>compute_stair_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_xvec'>xvec</span><span class='comma'>,</span> <span class='id identifier rubyid_yvec'>yvec</span><span class='comma'>,</span> <span class='label'>style:</span> <span class='id identifier rubyid_style'>style</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lineplot'>lineplot</span><span class='lparen'>(</span><span class='id identifier rubyid_x_vex'>x_vex</span><span class='comma'>,</span> <span class='id identifier rubyid_y_vex'>y_vex</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stairs!-class_method">
+  
+    .<strong>stairs!</strong>(plot, xvec, yvec, style: :post, **kw)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Similar to stairs, but takes an existing plot object as a first argument.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/stairs.rb', line 58</span>
+
+<span class='id identifier rubyid_module_function'>module_function</span> <span class='kw'>def</span> <span class='id identifier rubyid_stairs!'>stairs!</span><span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='comma'>,</span> <span class='id identifier rubyid_xvec'>xvec</span><span class='comma'>,</span> <span class='id identifier rubyid_yvec'>yvec</span><span class='comma'>,</span> <span class='label'>style:</span> <span class='symbol'>:post</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_x_vex'>x_vex</span><span class='comma'>,</span> <span class='id identifier rubyid_y_vex'>y_vex</span> <span class='op'>=</span> <span class='id identifier rubyid_compute_stair_lines'>compute_stair_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_xvec'>xvec</span><span class='comma'>,</span> <span class='id identifier rubyid_yvec'>yvec</span><span class='comma'>,</span> <span class='label'>style:</span> <span class='id identifier rubyid_style'>style</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lineplot!'>lineplot!</span><span class='lparen'>(</span><span class='id identifier rubyid_plot'>plot</span><span class='comma'>,</span> <span class='id identifier rubyid_x_vex'>x_vex</span><span class='comma'>,</span> <span class='id identifier rubyid_y_vex'>y_vex</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stemplot-class_method">
+  
+    .<strong>stemplot</strong>(*args, scale: 10, **kw)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Generates one or more <span class='object_link'><a href="UnicodePlot/Stemplot.html" title="UnicodePlot::Stemplot (class)">Stemplot</a></span> objects from the input data<br />
+and prints a Single or Double stemplot using <span class='object_link'><a href="#stemplot1!-class_method" title="UnicodePlot.stemplot1! (method)">stemplot1!</a></span> or <span class='object_link'><a href="#stemplot2!-class_method" title="UnicodePlot.stemplot2! (method)">stemplot2!</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'><p>Single sided stemplot</p>
+</div></p>
+      
+      <pre class="example code"><code>&gt;&gt; UnicodePlot.stemplot(eighty_ints)
+0 | 257
+1 | 00335679
+2 | 034455899
+3 | 145588
+4 | 0022223
+5 | 0223399
+6 | 012345568889
+7 | 01133334466777888
+8 | 013689
+9 | 22667
+Key: 1|0 = 10
+The decimal is 1 digit(s) to the right of |</code></pre>
+    
+      
+        <p class="example_title"><div class='inline'><p>Back-to-back stemplot</p>
+</div></p>
+      
+      <pre class="example code"><code>&gt;&gt; UnicodePlot.stemplot(eighty_ints, another_eighty_ints)
+              752 | 0 | 1244457899
+         97653300 | 1 | 4799
+        998554430 | 2 | 015668
+           885541 | 3 | 0144557888899
+          3222200 | 4 | 00268
+          9933220 | 5 | 0234778
+     988865543210 | 6 | 122222357889
+88877766443333110 | 7 | 134556689
+           986310 | 8 | 24589
+            76622 | 9 | 022234468
+Key: 1|0 = 10
+The decimal is 1 digit(s) to the right of |</code></pre>
+    
+  </div>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="UnicodePlot/Stemplot.html" title="UnicodePlot::Stemplot (class)">Stemplot</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/stemplot.rb', line 323</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_stemplot'>stemplot</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='label'>scale:</span> <span class='int'>10</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='kw'>when</span> <span class='int'>1</span>
+    <span class='comment'># Stemplot object
+</span>    <span class='id identifier rubyid_plt'>plt</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Stemplot.html" title="UnicodePlot::Stemplot (class)">Stemplot</a></span></span><span class='period'>.</span><span class='id identifier rubyid_factory'><span class='object_link'><a href="UnicodePlot/Stemplot.html#factory-class_method" title="UnicodePlot::Stemplot.factory (method)">factory</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>scale:</span> <span class='id identifier rubyid_scale'>scale</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+    <span class='comment'># Dispatch to plot routine
+</span>    <span class='id identifier rubyid_stemplot1!'>stemplot1!</span><span class='lparen'>(</span><span class='id identifier rubyid_plt'>plt</span><span class='comma'>,</span> <span class='label'>scale:</span> <span class='id identifier rubyid_scale'>scale</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='int'>2</span>
+    <span class='comment'># Stemplot object
+</span>    <span class='id identifier rubyid_plt1'>plt1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Stemplot.html" title="UnicodePlot::Stemplot (class)">Stemplot</a></span></span><span class='period'>.</span><span class='id identifier rubyid_factory'><span class='object_link'><a href="UnicodePlot/Stemplot.html#factory-class_method" title="UnicodePlot::Stemplot.factory (method)">factory</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>scale:</span> <span class='id identifier rubyid_scale'>scale</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_plt2'>plt2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnicodePlot/Stemplot.html" title="UnicodePlot::Stemplot (class)">Stemplot</a></span></span><span class='period'>.</span><span class='id identifier rubyid_factory'><span class='object_link'><a href="UnicodePlot/Stemplot.html#factory-class_method" title="UnicodePlot::Stemplot.factory (method)">factory</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>scale:</span> <span class='id identifier rubyid_scale'>scale</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plot types must be the same for back-to-back stemplot </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_plt1'>plt1</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'> != </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_plt2'>plt2</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_plt1'>plt1</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='id identifier rubyid_plt2'>plt2</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span>
+    <span class='comment'># Dispatch to plot routine
+</span>    <span class='id identifier rubyid_stemplot2!'>stemplot2!</span><span class='lparen'>(</span><span class='id identifier rubyid_plt1'>plt1</span><span class='comma'>,</span> <span class='id identifier rubyid_plt2'>plt2</span><span class='comma'>,</span> <span class='label'>scale:</span> <span class='id identifier rubyid_scale'>scale</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Expecting one or two arguments</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stemplot1!-class_method">
+  
+    .<strong>stemplot1!</strong>(plt, scale: 10, divider: &quot;|&quot;, padchar: &quot; &quot;, trim: false, **_kw)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Print a Single-Vector stemplot to STDOUT.</p>
+
+<ul>
+  <li>Stem data is printed on the left.</li>
+  <li>Leaf data is printed on the right.</li>
+  <li>Key is printed at the bottom.</li>
+</ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>plt</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Stemplot.html" title="UnicodePlot::Stemplot (class)">Stemplot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Stemplot object</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>scale</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>10</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Scale, should be a power of 10</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>divider</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;|&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Divider character between stem and leaf</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>padchar</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot; &quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Padding character</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>trim</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Trim missing stems from the plot</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/stemplot.rb', line 233</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_stemplot1!'>stemplot1!</span><span class='lparen'>(</span><span class='id identifier rubyid_plt'>plt</span><span class='comma'>,</span> 
+               <span class='label'>scale:</span> <span class='int'>10</span><span class='comma'>,</span>
+               <span class='label'>divider:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>|</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+               <span class='label'>padchar:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+               <span class='label'>trim:</span> <span class='kw'>false</span><span class='comma'>,</span>
+               <span class='op'>**</span><span class='id identifier rubyid__kw'>_kw</span>
+              <span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_stem_labels'>stem_labels</span> <span class='op'>=</span> <span class='id identifier rubyid_plt'>plt</span><span class='period'>.</span><span class='id identifier rubyid_stems'>stems</span><span class='lparen'>(</span><span class='label'>all:</span> <span class='op'>!</span><span class='id identifier rubyid_trim'>trim</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_label_len'>label_len</span> <span class='op'>=</span> <span class='id identifier rubyid_stem_labels'>stem_labels</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:length</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+  <span class='id identifier rubyid_column_len'>column_len</span> <span class='op'>=</span> <span class='id identifier rubyid_label_len'>label_len</span> <span class='op'>+</span> <span class='int'>1</span>
+  
+  <span class='id identifier rubyid_stem_labels'>stem_labels</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_stem'>stem</span><span class='op'>|</span>
+    <span class='id identifier rubyid_leaves'>leaves</span> <span class='op'>=</span> <span class='id identifier rubyid_plt'>plt</span><span class='period'>.</span><span class='id identifier rubyid_leaves'>leaves</span><span class='lparen'>(</span><span class='id identifier rubyid_stem'>stem</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span>
+    <span class='id identifier rubyid_stemlbl'>stemlbl</span> <span class='op'>=</span> <span class='id identifier rubyid_stem'>stem</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='id identifier rubyid_label_len'>label_len</span><span class='comma'>,</span> <span class='id identifier rubyid_padchar'>padchar</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_ljust'>ljust</span><span class='lparen'>(</span><span class='id identifier rubyid_column_len'>column_len</span><span class='comma'>,</span> <span class='id identifier rubyid_padchar'>padchar</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_stemlbl'>stemlbl</span> <span class='op'>+</span> <span class='id identifier rubyid_divider'>divider</span> <span class='op'>+</span> <span class='id identifier rubyid_padchar'>padchar</span> <span class='op'>+</span> <span class='id identifier rubyid_leaves'>leaves</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_plt'>plt</span><span class='period'>.</span><span class='id identifier rubyid_print_key'>print_key</span><span class='lparen'>(</span><span class='id identifier rubyid_scale'>scale</span><span class='comma'>,</span> <span class='id identifier rubyid_divider'>divider</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stemplot2!-class_method">
+  
+    .<strong>stemplot2!</strong>(plt1, plt2, scale: 10, divider: &quot;|&quot;, padchar: &quot; &quot;, trim: false, **_kw)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Print a Back-to-Back Stemplot to STDOUT</p>
+
+<ul>
+  <li>+plt1+ Leaf data is printed on the left.</li>
+  <li>Common stem data is printed in the center.</li>
+  <li>+plt2+ Leaf data is printed on the right.</li>
+  <li>Key is printed at the bottom.</li>
+</ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>plt1</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Stemplot.html" title="UnicodePlot::Stemplot (class)">Stemplot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Stemplot object for the left side</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>plt2</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnicodePlot/Stemplot.html" title="UnicodePlot::Stemplot (class)">Stemplot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Stemplot object for the right side</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>scale</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>10</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Scale, should be a power of 10</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>divider</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;|&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Divider character between stem and leaf</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>padchar</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot; &quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Padding character</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>trim</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Trim missing stems from the plot</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/stemplot.rb', line 265</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_stemplot2!'>stemplot2!</span><span class='lparen'>(</span><span class='id identifier rubyid_plt1'>plt1</span><span class='comma'>,</span> <span class='id identifier rubyid_plt2'>plt2</span><span class='comma'>,</span>
+               <span class='label'>scale:</span> <span class='int'>10</span><span class='comma'>,</span>
+               <span class='label'>divider:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>|</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+               <span class='label'>padchar:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+               <span class='label'>trim:</span> <span class='kw'>false</span><span class='comma'>,</span>
+               <span class='op'>**</span><span class='id identifier rubyid__kw'>_kw</span>
+              <span class='rparen'>)</span>
+  <span class='id identifier rubyid_stem_labels'>stem_labels</span> <span class='op'>=</span> <span class='id identifier rubyid_plt1'>plt1</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_sorted_stem_list'>sorted_stem_list</span><span class='lparen'>(</span> <span class='lparen'>(</span><span class='id identifier rubyid_plt1'>plt1</span><span class='period'>.</span><span class='id identifier rubyid_raw_stems'>raw_stems</span> <span class='op'>+</span> <span class='id identifier rubyid_plt2'>plt2</span><span class='period'>.</span><span class='id identifier rubyid_raw_stems'>raw_stems</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span><span class='comma'>,</span> <span class='label'>all:</span> <span class='op'>!</span><span class='id identifier rubyid_trim'>trim</span> <span class='rparen'>)</span>
+  <span class='id identifier rubyid_label_len'>label_len</span> <span class='op'>=</span> <span class='id identifier rubyid_stem_labels'>stem_labels</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:length</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+  <span class='id identifier rubyid_column_len'>column_len</span> <span class='op'>=</span> <span class='id identifier rubyid_label_len'>label_len</span> <span class='op'>+</span> <span class='int'>1</span>
+
+  <span class='id identifier rubyid_leftleaf_len'>leftleaf_len</span> <span class='op'>=</span> <span class='id identifier rubyid_plt1'>plt1</span><span class='period'>.</span><span class='id identifier rubyid_max_stem_length'>max_stem_length</span>
+
+  <span class='id identifier rubyid_stem_labels'>stem_labels</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_stem'>stem</span><span class='op'>|</span>
+    <span class='id identifier rubyid_left_leaves'>left_leaves</span> <span class='op'>=</span> <span class='id identifier rubyid_plt1'>plt1</span><span class='period'>.</span><span class='id identifier rubyid_leaves'>leaves</span><span class='lparen'>(</span><span class='id identifier rubyid_stem'>stem</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_right_leaves'>right_leaves</span> <span class='op'>=</span> <span class='id identifier rubyid_plt2'>plt2</span><span class='period'>.</span><span class='id identifier rubyid_leaves'>leaves</span><span class='lparen'>(</span><span class='id identifier rubyid_stem'>stem</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_left_leaves_just'>left_leaves_just</span> <span class='op'>=</span> <span class='id identifier rubyid_left_leaves'>left_leaves</span><span class='period'>.</span><span class='id identifier rubyid_reverse'>reverse</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='id identifier rubyid_leftleaf_len'>leftleaf_len</span><span class='comma'>,</span> <span class='id identifier rubyid_padchar'>padchar</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_stem'>stem</span> <span class='op'>=</span> <span class='id identifier rubyid_stem'>stem</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='id identifier rubyid_column_len'>column_len</span><span class='comma'>,</span> <span class='id identifier rubyid_padchar'>padchar</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_ljust'>ljust</span><span class='lparen'>(</span><span class='id identifier rubyid_column_len'>column_len</span><span class='op'>+</span><span class='int'>1</span><span class='comma'>,</span> <span class='id identifier rubyid_padchar'>padchar</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_left_leaves_just'>left_leaves_just</span> <span class='op'>+</span> <span class='id identifier rubyid_padchar'>padchar</span> <span class='op'>+</span> <span class='id identifier rubyid_divider'>divider</span> <span class='op'>+</span> <span class='id identifier rubyid_stem'>stem</span> <span class='op'>+</span> <span class='id identifier rubyid_divider'>divider</span> <span class='op'>+</span> <span class='id identifier rubyid_padchar'>padchar</span> <span class='op'>+</span> <span class='id identifier rubyid_right_leaves'>right_leaves</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_plt1'>plt1</span><span class='period'>.</span><span class='id identifier rubyid_print_key'>print_key</span><span class='lparen'>(</span><span class='id identifier rubyid_scale'>scale</span><span class='comma'>,</span> <span class='id identifier rubyid_divider'>divider</span><span class='rparen'>)</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Mar 23 14:44:20 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-3.0.0).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'><h1 id="unicodeplot---plot-your-data-by-unicode-characters">UnicodePlot - Plot your data by Unicode characters</h1>
+
+<p>UnicodePlot provides the feature to make charts with Unicode characters.</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>https://red-data-tools.github.io/unicode_plot.rb/</p>
+
+<h2 id="install">Install</h2>
+
+<pre class="code language-console"><code class="language-console">$ gem install unicode_plot
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+
+<pre class="code language-ruby"><code class="language-ruby">require &#39;unicode_plot&#39;
+
+x = 0.step(3*Math::PI, by: 3*Math::PI / 30)
+y_sin = x.map {|xi| Math.sin(xi) }
+y_cos = x.map {|xi| Math.cos(xi) }
+plot = UnicodePlot.lineplot(x, y_sin, name: &quot;sin(x)&quot;, width: 40, height: 10)
+UnicodePlot.lineplot!(plot, x, y_cos, name: &quot;cos(x)&quot;)
+plot.render
+</code></pre>
+
+<p>You can get the results below by running the above script:</p>
+
+<p><img src="img/lineplot.png" width="50%" /></p>
+
+<h2 id="supported-charts">Supported charts</h2>
+
+<h3 id="barplot">barplot</h3>
+
+<pre class="code language-ruby"><code class="language-ruby">UnicodePlot.barplot(data: {&#39;foo&#39;: 20, &#39;bar&#39;: 50}, title: &quot;Bar&quot;).render
+</code></pre>
+
+<p><img src="img/barplot.png" width="50%" /></p>
+
+<h3 id="boxplot">boxplot</h3>
+
+<pre class="code language-ruby"><code class="language-ruby">UnicodePlot.boxplot(data: {foo: [1, 3, 5], bar: [3, 5, 7]}, title: &quot;Box&quot;).render
+</code></pre>
+
+<p><img src="img/boxplot.png" width="50%" /></p>
+
+<h3 id="densityplot">densityplot</h3>
+
+<pre class="code language-ruby"><code class="language-ruby">x = Array.new(500) { 20*rand - 10 } + Array.new(500) { 6*rand - 3 }
+y = Array.new(1000) { 30*rand - 10 }
+UnicodePlot.densityplot(x, y, title: &quot;Density&quot;).render
+</code></pre>
+
+<p><img src="img/densityplot.png" width="50%" /></p>
+
+<h3 id="histogram">histogram</h3>
+
+<pre class="code language-ruby"><code class="language-ruby">x = Array.new(100) { rand(10) } + Array.new(100) { rand(30) + 10 }
+UnicodePlot.histogram(x, title: &quot;Histogram&quot;).render
+</code></pre>
+
+<p><img src="img/histogram.png" width="50%" /></p>
+
+<h3 id="lineplot">lineplot</h3>
+
+<p>See <a href="#usage">Usage</a> section above.</p>
+
+<h3 id="scatterplot">scatterplot</h3>
+
+<pre class="code language-ruby"><code class="language-ruby">x = Array.new(50) { rand(20) - 10 }
+y = x.map {|xx| xx*rand(30) - 10 }
+UnicodePlot.scatterplot(x, y, title: &quot;Scatter&quot;).render
+</code></pre>
+
+<p><img src="img/scatterplot.png" width="50%" /></p>
+
+<h2 id="acknowledgement">Acknowledgement</h2>
+
+<p>This library is strongly inspired by <a href="https://github.com/Evizero/UnicodePlots.jl">UnicodePlot.jl</a>.</p>
+
+<h2 id="license">License</h2>
+
+<p>MIT License</p>
+
+<h2 id="author">Author</h2>
+
+<ul>
+  <li><a href="https://github.com/mrkn">Kenta Murata</a></li>
+</ul>
+</div></div>
+
+      <div id="footer">
+  Generated on Tue Mar 23 14:44:19 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-3.0.0).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: UnicodePlot::BlockCanvas
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "UnicodePlot::BlockCanvas";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (B)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../UnicodePlot.html" title="UnicodePlot (module)">UnicodePlot</a></span></span>
+     &raquo; 
+    <span class="title">BlockCanvas</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: UnicodePlot::BlockCanvas
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="LookupCanvas.html" title="UnicodePlot::LookupCanvas (class)">LookupCanvas</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Canvas.html" title="UnicodePlot::Canvas (class)">Canvas</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="LookupCanvas.html" title="UnicodePlot::LookupCanvas (class)">LookupCanvas</a></span></li>
+          
+            <li class="next">UnicodePlot::BlockCanvas</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>src/lib/unicode_plot/canvas/block_canvas.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>The <code>BlockCanvas</code> is also Unicode-based.<br />
+It has half the resolution of the <code>BrailleCanvas</code>.<br />
+In contrast to BrailleCanvas, the pixels don’t<br />
+have visible spacing between them.<br />
+This canvas effectively turns every character<br />
+into 4 pixels that can individually be manipulated<br />
+using binary operations.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="X_PIXEL_PER_CHAR-constant" class="">X_PIXEL_PER_CHAR =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>2</span></pre></dd>
+      
+        <dt id="Y_PIXEL_PER_CHAR-constant" class="">Y_PIXEL_PER_CHAR =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>2</span></pre></dd>
+      
+        <dt id="BLOCK_SIGNS-constant" class="">BLOCK_SIGNS =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span>
+  <span class='lbracket'>[</span><span class='int'>0b1000</span><span class='comma'>,</span> <span class='int'>0b0010</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='int'>0b0100</span><span class='comma'>,</span> <span class='int'>0b0001</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span>
+<span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="BLOCK_DECODE-constant" class="">BLOCK_DECODE =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span>
+  <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▗</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▖</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▄</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▝</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▐</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▞</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▟</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▘</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▚</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▌</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▙</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▀</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▜</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>▛</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>-</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>█</span><span class='tstring_end'>&#39;</span></span>
+<span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+  
+  
+  <h3 class="inherited">Constants inherited
+     from <span class='object_link'><a href="Canvas.html" title="UnicodePlot::Canvas (class)">Canvas</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Canvas.html#CANVAS_CLASS_MAP-constant" title="UnicodePlot::Canvas::CANVAS_CLASS_MAP (constant)">Canvas::CANVAS_CLASS_MAP</a></span></p>
+
+  
+  
+  <h3 class="inherited">Constants included
+     from <span class='object_link'><a href="StyledPrinter.html" title="UnicodePlot::StyledPrinter (module)">StyledPrinter</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="StyledPrinter.html#COLOR_DECODE-constant" title="UnicodePlot::StyledPrinter::COLOR_DECODE (constant)">StyledPrinter::COLOR_DECODE</a></span>, <span class='object_link'><a href="StyledPrinter.html#COLOR_ENCODE-constant" title="UnicodePlot::StyledPrinter::COLOR_ENCODE (constant)">StyledPrinter::COLOR_ENCODE</a></span>, <span class='object_link'><a href="StyledPrinter.html#DISABLE_TEXT_STYLE-constant" title="UnicodePlot::StyledPrinter::DISABLE_TEXT_STYLE (constant)">StyledPrinter::DISABLE_TEXT_STYLE</a></span>, <span class='object_link'><a href="StyledPrinter.html#TEXT_COLORS-constant" title="UnicodePlot::StyledPrinter::TEXT_COLORS (constant)">StyledPrinter::TEXT_COLORS</a></span></p>
+
+
+
+
+  <h2>Instance Attribute Summary</h2>
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="Canvas.html" title="UnicodePlot::Canvas (class)">Canvas</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Canvas.html#height-instance_method" title="UnicodePlot::Canvas#height (method)">#height</a></span>, <span class='object_link'><a href="Canvas.html#origin_x-instance_method" title="UnicodePlot::Canvas#origin_x (method)">#origin_x</a></span>, <span class='object_link'><a href="Canvas.html#origin_y-instance_method" title="UnicodePlot::Canvas#origin_y (method)">#origin_y</a></span>, <span class='object_link'><a href="Canvas.html#pixel_height-instance_method" title="UnicodePlot::Canvas#pixel_height (method)">#pixel_height</a></span>, <span class='object_link'><a href="Canvas.html#pixel_width-instance_method" title="UnicodePlot::Canvas#pixel_width (method)">#pixel_width</a></span>, <span class='object_link'><a href="Canvas.html#plot_height-instance_method" title="UnicodePlot::Canvas#plot_height (method)">#plot_height</a></span>, <span class='object_link'><a href="Canvas.html#plot_width-instance_method" title="UnicodePlot::Canvas#plot_width (method)">#plot_width</a></span>, <span class='object_link'><a href="Canvas.html#width-instance_method" title="UnicodePlot::Canvas#width (method)">#width</a></span>, <span class='object_link'><a href="Canvas.html#x_pixel_per_char-instance_method" title="UnicodePlot::Canvas#x_pixel_per_char (method)">#x_pixel_per_char</a></span>, <span class='object_link'><a href="Canvas.html#y_pixel_per_char-instance_method" title="UnicodePlot::Canvas#y_pixel_per_char (method)">#y_pixel_per_char</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(width, height, fill_char = 0, **kw)  &#x21d2; BlockCanvas </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>A new instance of BlockCanvas.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lookup_decode-instance_method" title="#lookup_decode (instance method)">#<strong>lookup_decode</strong>(x)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lookup_encode-instance_method" title="#lookup_encode (instance method)">#<strong>lookup_encode</strong>(x, y)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="LookupCanvas.html" title="UnicodePlot::LookupCanvas (class)">LookupCanvas</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="LookupCanvas.html#pixel!-instance_method" title="UnicodePlot::LookupCanvas#pixel! (method)">#pixel!</a></span>, <span class='object_link'><a href="LookupCanvas.html#print_row-instance_method" title="UnicodePlot::LookupCanvas#print_row (method)">#print_row</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Canvas.html" title="UnicodePlot::Canvas (class)">Canvas</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Canvas.html#char_at-instance_method" title="UnicodePlot::Canvas#char_at (method)">#char_at</a></span>, <span class='object_link'><a href="Canvas.html#color_at-instance_method" title="UnicodePlot::Canvas#color_at (method)">#color_at</a></span>, <span class='object_link'><a href="Canvas.html#create-class_method" title="UnicodePlot::Canvas.create (method)">create</a></span>, <span class='object_link'><a href="Canvas.html#index_at-instance_method" title="UnicodePlot::Canvas#index_at (method)">#index_at</a></span>, <span class='object_link'><a href="Canvas.html#line!-instance_method" title="UnicodePlot::Canvas#line! (method)">#line!</a></span>, <span class='object_link'><a href="Canvas.html#lines!-instance_method" title="UnicodePlot::Canvas#lines! (method)">#lines!</a></span>, <span class='object_link'><a href="Canvas.html#point!-instance_method" title="UnicodePlot::Canvas#point! (method)">#point!</a></span>, <span class='object_link'><a href="Canvas.html#points!-instance_method" title="UnicodePlot::Canvas#points! (method)">#points!</a></span>, <span class='object_link'><a href="Canvas.html#print-instance_method" title="UnicodePlot::Canvas#print (method)">#print</a></span>, <span class='object_link'><a href="Canvas.html#show-instance_method" title="UnicodePlot::Canvas#show (method)">#show</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="BorderPrinter.html" title="UnicodePlot::BorderPrinter (module)">BorderPrinter</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="BorderPrinter.html#print_border_bottom-instance_method" title="UnicodePlot::BorderPrinter#print_border_bottom (method)">#print_border_bottom</a></span>, <span class='object_link'><a href="BorderPrinter.html#print_border_top-instance_method" title="UnicodePlot::BorderPrinter#print_border_top (method)">#print_border_top</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="StyledPrinter.html" title="UnicodePlot::StyledPrinter (module)">StyledPrinter</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="StyledPrinter.html#print_color-instance_method" title="UnicodePlot::StyledPrinter#print_color (method)">#print_color</a></span>, <span class='object_link'><a href="StyledPrinter.html#print_styled-instance_method" title="UnicodePlot::StyledPrinter#print_styled (method)">#print_styled</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(width, height, fill_char = 0, **kw)  &#x21d2; <tt><span class='object_link'><a href="" title="UnicodePlot::BlockCanvas (class)">BlockCanvas</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns a new instance of BlockCanvas.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/canvas/block_canvas.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_height'>height</span><span class='comma'>,</span> <span class='id identifier rubyid_fill_char'>fill_char</span><span class='op'>=</span><span class='int'>0</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_height'>height</span><span class='comma'>,</span>
+        <span class='const'><span class='object_link'><a href="#X_PIXEL_PER_CHAR-constant" title="UnicodePlot::BlockCanvas::X_PIXEL_PER_CHAR (constant)">X_PIXEL_PER_CHAR</a></span></span><span class='comma'>,</span>
+        <span class='const'><span class='object_link'><a href="#Y_PIXEL_PER_CHAR-constant" title="UnicodePlot::BlockCanvas::Y_PIXEL_PER_CHAR (constant)">Y_PIXEL_PER_CHAR</a></span></span><span class='comma'>,</span>
+        <span class='id identifier rubyid_fill_char'>fill_char</span><span class='comma'>,</span>
+        <span class='op'>**</span><span class='id identifier rubyid_kw'>kw</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="lookup_decode-instance_method">
+  
+    #<strong>lookup_decode</strong>(x)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/canvas/block_canvas.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_lookup_decode'>lookup_decode</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span> <span class='semicolon'>;</span> <span class='const'><span class='object_link'><a href="#BLOCK_DECODE-constant" title="UnicodePlot::BlockCanvas::BLOCK_DECODE (constant)">BLOCK_DECODE</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='rbracket'>]</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lookup_encode-instance_method">
+  
+    #<strong>lookup_encode</strong>(x, y)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'src/lib/unicode_plot/canvas/block_canvas.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_lookup_encode'>lookup_encode</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span> <span class='semicolon'>;</span> <span class='const'><span class='object_link'><a href="#BLOCK_SIGNS-constant" title="UnicodePlot::BlockCanvas::BLOCK_SIGNS (constant)">BLOCK_SIGNS</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_y'>y</span><span class='rbracket'>]</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Mar 23 14:44:21 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-3.0.0).
+</div>
+
+    </div>
+  </body>
+</html>
