@@ -8,6 +8,31 @@
   [GitHub#39][GitHub#19]
   [Patch by @nanobowers]
 
+- Add stemplot support
+  [GitHub#40][GitHub#30]
+  [Patch by @nanobowers]
+
+- Add an example of animation
+  [GitHub#33]
+  [Patch by @mrkn and @kojix2]
+
+- Fix interpolation bug of lineplot
+  [GitHub#37][GitHub#32]
+  [Patch by @nanobowers]
+  [Reported by @Nakilon]
+
+- Support `color:` option in `render` method
+  [GitHub#45]
+
+- Add `canvas_types` method
+  [GitHub#44][GitHub#42]
+  [Reported by @kojix2]
+
+- Use appropriate message for invalid border types,
+  and add `border_types` method
+  [GitHub#43][GitHub#41]
+  [Reported by @kojix2]
+
 # 0.0.4
 
 - Fix error by requiring `stringio` [#22]
