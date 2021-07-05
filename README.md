@@ -80,6 +80,53 @@ UnicodePlot.scatterplot(x, y, title: "Scatter").render
 
 <img src="img/scatterplot.png" width="50%" />
 
+### stemplot
+
+#### Two-sided stemplot of numbers 
+```ruby
+eighty_ints = 80.times.map { rand(1..100) }
+another_eighty_ints = 80.times.map { rand(1..100) }
+# two-sided stem plot
+UnicodePlot.stemplot(eighty_ints, another_eighty_ints)
+```
+
+output:
+```
+       88544 |  0 | 22345569
+   999955431 |  1 | 0445566688
+       98110 |  2 | 0568
+ 85433221100 |  3 | 0234568
+      553220 |  4 | 23367
+     9777662 |  5 | 22334446679
+   988855321 |  6 | 012245555889
+     9985510 |  7 | 00044556789
+766555444100 |  8 | 0134678
+    87776332 |  9 | 13347
+           0 | 10 |
+Key: 1|0 = 10
+The decimal is 1 digit(s) to the right of |
+```
+
+#### One-sided stem-plot of strings
+```ruby
+UnicodePlot.stemplot(eighty_ints)
+words_1 = %w[apple junk ant age bee bar baz dog egg a]
+UnicodePlot.stemplot(words_1)
+```
+
+output:
+```
+a | _gnp
+b | aae
+c |
+d | o
+e | g
+f |
+g |
+h |
+i |
+j | u
+```
 ## Acknowledgement
 
 This library is strongly inspired by [UnicodePlot.jl](https://github.com/Evizero/UnicodePlots.jl).
