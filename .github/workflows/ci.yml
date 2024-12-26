@@ -19,9 +19,7 @@ jobs:
       fail-fast: false
       matrix:
         os:
-        - ubuntu-20.04
-        - ubuntu-18.04
-        - ubuntu-16.04
+        - ubuntu-latest
         - macos-latest
         - windows-latest
         ruby:
