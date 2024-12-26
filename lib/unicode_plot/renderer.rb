@@ -11,6 +11,17 @@ module UnicodePlot
       r:  "│"
     }.freeze
 
+    BORDER_ASCII = {
+      tl: "+",
+      tr: "+",
+      bl: "+",
+      br: "+",
+      t:  "-",
+      l:  "|",
+      b:  "-",
+      r:  "|"
+    }.freeze
+
     BORDER_CORNERS = {
       tl: "┌",
       tr: "┐",
@@ -36,6 +47,7 @@ module UnicodePlot
 
   BORDER_MAP = {
     solid:   BorderMaps::BORDER_SOLID,
+    ascii:   BorderMaps::BORDER_ASCII,
     corners: BorderMaps::BORDER_CORNERS,
     barplot: BorderMaps::BORDER_BARPLOT,
   }.freeze
