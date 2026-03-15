@@ -17,7 +17,7 @@ module UnicodePlot
       x = Array(args[0])
       y = Array(args[1])
     else
-      raise ArgumentError, "worng number of arguments"
+      raise ArgumentError, "wrong number of arguments"
     end
 
     plot = Scatterplot.new(x, y, canvas, **kw)
@@ -38,7 +38,7 @@ module UnicodePlot
       x = Array(args[0])
       y = Array(args[1])
     else
-      raise ArgumentError, "worng number of arguments"
+      raise ArgumentError, "wrong number of arguments"
     end
 
     color = color == :auto ? plot.next_color : color

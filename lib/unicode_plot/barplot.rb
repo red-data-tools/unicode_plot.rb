@@ -73,7 +73,7 @@ module UnicodePlot
   #
   #   Draws a horizontal barplot.
   #
-  #   @param text [Array<String>] The lables / captions of the bars.
+  #   @param text [Array<String>] The labels / captions of the bars.
   #   @param heights [Array<Numeric>] The values / heights of the bars.
   #   @param xscale [nil,:log,:ln,:log10,:lg,:log2,:lb,callable]
   #          A function name symbol or callable object to transform the bar

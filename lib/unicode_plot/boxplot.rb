@@ -163,7 +163,7 @@ module UnicodePlot
       name = args[0]
       data = args[1]
     else
-      raise ArgumentError, "worng number of arguments"
+      raise ArgumentError, "wrong number of arguments"
     end
 
     if data.empty?
