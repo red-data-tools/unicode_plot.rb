@@ -6,7 +6,7 @@ class UnicodePlotTest < Test::Unit::TestCase
   end
 
   test("UnicodePlot.border_types") do
-    available_border_types = [:solid, :corners, :barplot]
+    available_border_types = [:solid, :ascii, :corners, :barplot]
     assert_equal(available_border_types.sort,
                  UnicodePlot.border_types.sort)
   end
